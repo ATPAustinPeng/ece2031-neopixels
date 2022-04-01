@@ -210,6 +210,14 @@ begin
 			if (io_write = '1') and (cs_addr='1') then
 				ram_write_addr <= data_in(7 downto 0);
 			end if;
+			
+			if (pxl_all_en = '1') then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
+			
+			if (wstate = storing) and (pxl_all_en = '1') then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
 		end if;
 	
 	
@@ -234,7 +242,7 @@ begin
 		elsif rising_edge(clk_10M) then
 			case wstate is
 			when idle =>
-				if (io_write = '1') and (cs_data='1') then
+				if ((io_write = '1') and (cs_data='1')) or (pxl_all_en = '1') then
 					-- latch the current data into the temporary storage register,
 					-- because this is the only time it'll be available.
 					-- Convert RGB565 to 24-bit color
