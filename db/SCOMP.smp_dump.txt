@@ -29,3 +29,11 @@ state.ex_in 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 state.ex_in2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.ex_out 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.ex_out2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |SCOMP_System|NeoPixelController:inst13|wstate
+Name wstate.storing wstate.receiving24bitbluecolor wstate.receiving24bitgreencolor wstate.receiving24bitredcolor wstate.idle 
+wstate.idle 0 0 0 0 0 
+wstate.receiving24bitredcolor 0 0 0 1 1 
+wstate.receiving24bitgreencolor 0 0 1 0 1 
+wstate.receiving24bitbluecolor 0 1 0 0 1 
+wstate.storing 1 0 0 0 1 

@@ -15,9 +15,14 @@ entity NeoPixelController is
 	port(
 		clk_10M   : in   std_logic;
 		resetn    : in   std_logic;
-		io_write  : in   std_logic ;
-		cs_addr   : in   std_logic ;
-		cs_data   : in   std_logic ;
+		io_write  : in   std_logic;
+		cs_addr   : in   std_logic;
+		cs_data   : in   std_logic;
+		pxl_all_en: in	  std_logic;
+		pxl_24_bitcolor_en: in std_logic;
+		pxl_24_red_en: in std_logic;
+		pxl_24_green_en: in std_logic;
+		pxl_24_blue_en: in std_logic;
 		data_in   : in   std_logic_vector(15 downto 0);
 		sda       : out  std_logic
 	); 
@@ -40,7 +45,7 @@ architecture internals of NeoPixelController is
 	signal ram_write_buffer : std_logic_vector(23 downto 0);
 
 	-- RAM interface state machine signals
-	type write_states is (idle, storing);
+	type write_states is (idle, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
 	signal wstate: write_states;
 
 	
@@ -238,6 +243,24 @@ begin
 					-- won't be stored until next clock cycle.
 					ram_we <= '1';
 					-- Change state
+					wstate <= storing;
+				elsif (io_write = '1') and (pxl_24_bitcolor_en = '1') then
+					wstate <= receiving24bitredcolor;
+					ram_we <= '1';
+				end if;
+			when receiving24bitredcolor =>
+				if (io_write = '1') and (pxl_24_red_en = '1') then
+					ram_write_buffer <= "00000000" & data_in(7 downto 0) & "00000000";
+					wstate <= receiving24bitgreencolor;
+				end if;
+			when receiving24bitgreencolor =>
+				if (io_write = '1') and (pxl_24_green_en = '1') then
+					ram_write_buffer <= (data_in(7 downto 0) & "0000000000000000") OR ram_write_buffer;
+					wstate <= receiving24bitbluecolor;
+				end if;
+			when receiving24bitbluecolor =>
+				if (io_write = '1') and (pxl_24_blue_en = '1') then
+					ram_write_buffer <= ram_write_buffer OR ("0000000000000000" & data_in(7 downto 0));
 					wstate <= storing;
 				end if;
 			when storing =>
