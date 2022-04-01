@@ -18,6 +18,7 @@ entity NeoPixelController is
 		io_write  : in   std_logic ;
 		cs_addr   : in   std_logic ;
 		cs_data   : in   std_logic ;
+		cs_all	 : in   std_logic;
 		data_in   : in   std_logic_vector(15 downto 0);
 		sda       : out  std_logic
 	); 
@@ -193,7 +194,7 @@ begin
 	
 	
 	
-	process(clk_10M, resetn, cs_addr)
+	process(clk_10M, resetn, cs_addr, cs_all)
 	begin
 		-- For this implementation, saving the memory address
 		-- doesn't require anything special.  Just latch it when
@@ -205,6 +206,12 @@ begin
 			if (io_write = '1') and (cs_addr='1') then
 				ram_write_addr <= data_in(7 downto 0);
 			end if;
+			
+			if (wstate = storing) and (cs_all = '1') then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
+				
+				
 		end if;
 	
 	
@@ -229,7 +236,7 @@ begin
 		elsif rising_edge(clk_10M) then
 			case wstate is
 			when idle =>
-				if (io_write = '1') and (cs_data='1') then
+				if (io_write = '1') and ((cs_data='1') or (cs_all = '1')) then
 					-- latch the current data into the temporary storage register,
 					-- because this is the only time it'll be available.
 					-- Convert RGB565 to 24-bit color
@@ -250,6 +257,7 @@ begin
 				wstate <= idle;
 			end case;
 		end if;
+		
 	end process;
 
 	

@@ -10,24 +10,9 @@ CONTENT
   BEGIN
     [000..7FF] : 0000;  -- Default to NOP
 
-           000 : B800;  --     LOADI  0
-           001 : 98B0;  --     OUT    PXL_A
-           002 : 0812;  --     LOAD   BLUECOLOR
-           003 : 98B1;  --     OUT    PXL_D
-           004 : B801;  -- 	LOADI  1
-           005 : 98B0;  --     OUT    PXL_A
-           006 : 0812;  --     LOAD   BLUECOLOR
-           007 : 98B1;  --     OUT    PXL_D
-           008 : B806;  -- 	LOADI  6
-           009 : 98B0;  --     OUT    PXL_A
-           00A : 0811;  --     LOAD   REDCOLOR
-           00B : 98B1;  --     OUT    PXL_D
-           00C : B807;  -- 	LOADI  7
-           00D : 98B0;  --     OUT    PXL_A
-           00E : 0813;  --     LOAD   GREENCOLOR
-           00F : 98B1;  --     OUT    PXL_D
-           010 : 2800;  --     JUMP   LOOP
-           011 : F800;  -- REDCOLOR: DW &B1111100000000000
-           012 : 001F;  -- BLUECOLOR: DW &B0000000000011111
-           013 : 07E0;  -- GREENCOLOR: DW &B0000011111100000
+           000 : 0803;  -- 	LOAD BLUECOLOR
+           001 : 98B2;  -- 	OUT PXL_All
+           002 : F800;  -- REDCOLOR: DW &B1111100000000000
+           003 : 001F;  -- BLUECOLOR: DW &B0000000000011111
+           004 : 07E0;  -- GREENCOLOR: DW &B0000011111100000
   END;
