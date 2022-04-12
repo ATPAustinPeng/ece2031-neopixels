@@ -97,9 +97,16 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 192)
 		(input)
+		(text "pattern_number_en" (rect 0 0 79 12)(font "Arial" ))
+		(text "pattern_number_en" (rect 21 187 100 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
 		(text "data_in[15..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "data_in[15..0]" (rect 21 187 72 199)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192)(line_width 3))
+		(text "data_in[15..0]" (rect 21 203 72 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
 	)
 	(port
 		(pt 192 32)

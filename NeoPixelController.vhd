@@ -23,6 +23,7 @@ entity NeoPixelController is
 		pxl_24_red_en: in std_logic;
 		pxl_24_green_en: in std_logic;
 		pxl_24_blue_en: in std_logic;
+		pattern_number_en: in std_logic;
 		data_in   : in   std_logic_vector(15 downto 0);
 		sda       : out  std_logic
 	); 
@@ -43,9 +44,12 @@ architecture internals of NeoPixelController is
 
 	-- Signal SCOMP will write to before it gets stored into memory
 	signal ram_write_buffer : std_logic_vector(23 downto 0);
+	
+	signal pattern_number: std_logic_vector(15 downto 0);
+	signal temp_color: std_logic_vector(23 downto 0);
 
 	-- RAM interface state machine signals
-	type write_states is (idle, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
+	type write_states is (idle, pattern_0_storing, pattern_0_reset, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
 	signal wstate: write_states;
 
 	
@@ -211,13 +215,14 @@ begin
 				ram_write_addr <= data_in(7 downto 0);
 			end if;
 			
-			if (pxl_all_en = '1') then
+			if (pxl_all_en = '1') or (pattern_number_en = '1') then
 				ram_write_addr <= ram_write_addr + 1;
 			end if;
 			
-			if (wstate = storing) and (pxl_all_en = '1') then
+			if (wstate = storing) and ((pxl_all_en = '1') or (pattern_number_en = '1')) then
 				ram_write_addr <= ram_write_addr + 1;
 			end if;
+			
 		end if;
 	
 	
@@ -247,6 +252,7 @@ begin
 					-- because this is the only time it'll be available.
 					-- Convert RGB565 to 24-bit color
 					ram_write_buffer <= data_in(10 downto 5) & "00" & data_in(15 downto 11) & "000" & data_in(4 downto 0) & "000";
+					temp_color <= ram_write_buffer;
 					-- can raise ram_we on the upcoming transition, because data
 					-- won't be stored until next clock cycle.
 					ram_we <= '1';
@@ -255,7 +261,25 @@ begin
 				elsif (io_write = '1') and (pxl_24_bitcolor_en = '1') then
 					wstate <= receiving24bitredcolor;
 					ram_we <= '1';
+				
+				elsif (io_write = '1') and (pattern_number_en = '1') then
+					pattern_number <= data_in(15 downto 0);
+					if (pattern_number = "0") then
+						ram_write_buffer <= temp_color;
+						wstate <= pattern_0_storing;
+					end if;
 				end if;
+			
+			when pattern_0_storing =>
+				ram_we <= '0';
+				wstate <= pattern_0_reset;
+			
+			when pattern_0_reset =>
+				ram_we <= '1';
+				ram_write_buffer <= x"000000";
+				wstate <= storing;
+				
+					
 			when receiving24bitredcolor =>
 				if (io_write = '1') and (pxl_24_red_en = '1') then
 					ram_write_buffer <= "00000000" & data_in(7 downto 0) & "00000000";

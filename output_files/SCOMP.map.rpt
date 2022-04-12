@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Fri Apr 01 15:19:57 2022
+Tue Apr 12 13:45:57 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -61,13 +61,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 01 15:19:57 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 12 13:45:57 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 357                                         ;
+; Total registers                 ; 399                                         ;
 ; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 38,912                                      ;
@@ -188,41 +188,41 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+----------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                            ; Library  ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+----------+
-; NeoPixelController.vhd           ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd   ;          ;
-; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd             ;          ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_OUT.vhd              ;          ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_IN.vhd               ;          ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/clk_div.vhd              ;          ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd                ;          ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/IO_DECODER.vhd           ;          ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd                ;          ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP_System.bdf         ;          ;
-; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP_6.bdf           ;          ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main.vhd             ; PLL_main ;
-; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main/PLL_main_0002.v ; PLL_main ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf              ;          ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;          ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;          ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc              ;          ;
-; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc              ;          ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc               ;          ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                  ;          ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                  ;          ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                ;          ;
-; db/altsyncram_2c24.tdf           ; yes             ; Auto-Generated Megafunction            ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/altsyncram_2c24.tdf   ;          ;
-; pixeldata.mif                    ; yes             ; Auto-Found Memory Initialization File  ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/pixeldata.mif            ;          ;
-; altera_pll.v                     ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                ;          ;
-; db/altsyncram_qm24.tdf           ; yes             ; Auto-Generated Megafunction            ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/altsyncram_qm24.tdf   ;          ;
-; pixeltest.mif                    ; yes             ; Auto-Found Memory Initialization File  ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/pixeltest.mif            ;          ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf             ;          ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/lpm_clshift_fuc.tdf   ;          ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf              ;          ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+----------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                       ; Library  ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+; NeoPixelController.vhd           ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd   ;          ;
+; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd             ;          ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_OUT.vhd              ;          ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_IN.vhd               ;          ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/clk_div.vhd              ;          ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd                ;          ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/IO_DECODER.vhd           ;          ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd                ;          ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP_System.bdf         ;          ;
+; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP_6.bdf           ;          ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main.vhd             ; PLL_main ;
+; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v ; PLL_main ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                              ;          ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;          ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;          ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                              ;          ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                              ;          ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                               ;          ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                  ;          ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                  ;          ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                ;          ;
+; db/altsyncram_2c24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_2c24.tdf   ;          ;
+; pixeldata.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/pixeldata.mif            ;          ;
+; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                                ;          ;
+; db/altsyncram_qm24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_qm24.tdf   ;          ;
+; pixeltest.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/pixeltest.mif            ;          ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                             ;          ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/lpm_clshift_fuc.tdf   ;          ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                              ;          ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+----------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -230,16 +230,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 386                                                                               ;
+; Estimate of Logic utilization (ALMs needed) ; 390                                                                               ;
 ;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 523                                                                               ;
-;     -- 7 input functions                    ; 1                                                                                 ;
-;     -- 6 input functions                    ; 118                                                                               ;
-;     -- 5 input functions                    ; 181                                                                               ;
-;     -- 4 input functions                    ; 77                                                                                ;
-;     -- <=3 input functions                  ; 146                                                                               ;
+; Combinational ALUT usage for logic          ; 551                                                                               ;
+;     -- 7 input functions                    ; 5                                                                                 ;
+;     -- 6 input functions                    ; 91                                                                                ;
+;     -- 5 input functions                    ; 186                                                                               ;
+;     -- 4 input functions                    ; 103                                                                               ;
+;     -- <=3 input functions                  ; 166                                                                               ;
 ;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 357                                                                               ;
+; Dedicated logic registers                   ; 399                                                                               ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 64                                                                                ;
 ; Total MLAB memory bits                      ; 0                                                                                 ;
@@ -251,9 +251,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 381                                                                               ;
-; Total fan-out                               ; 4397                                                                              ;
-; Average fan-out                             ; 4.19                                                                              ;
+; Maximum fan-out                             ; 425                                                                               ;
+; Total fan-out                               ; 4556                                                                              ;
+; Average fan-out                             ; 4.07                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
@@ -262,28 +262,28 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+--------------------+--------------+
-; |SCOMP_System                             ; 523 (31)            ; 357 (0)                   ; 38912             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                              ; SCOMP_System       ; work         ;
+; |SCOMP_System                             ; 551 (28)            ; 399 (0)                   ; 38912             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                              ; SCOMP_System       ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                 ; DIG_IN             ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_OUT:inst6                                                                ; DIG_OUT            ; work         ;
-;    |HEX_DISP_6:inst9|                     ; 44 (2)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                             ; HEX_DISP_6         ; work         ;
+;    |HEX_DISP_6:inst9|                     ; 47 (5)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                             ; HEX_DISP_6         ; work         ;
 ;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                              ; HEX_DISP           ; work         ;
-;    |IO_DECODER:inst3|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|IO_DECODER:inst3                                                             ; IO_DECODER         ; work         ;
-;    |NeoPixelController:inst13|            ; 132 (132)           ; 99 (99)                   ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13                                                    ; NeoPixelController ; work         ;
+;    |IO_DECODER:inst3|                     ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|IO_DECODER:inst3                                                             ; IO_DECODER         ; work         ;
+;    |NeoPixelController:inst13|            ; 169 (169)           ; 141 (141)                 ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13                                                    ; NeoPixelController ; work         ;
 ;       |altsyncram:pixelRAM|               ; 0 (0)               ; 0 (0)                     ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13|altsyncram:pixelRAM                                ; altsyncram         ; work         ;
 ;          |altsyncram_2c24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13|altsyncram:pixelRAM|altsyncram_2c24:auto_generated ; altsyncram_2c24    ; work         ;
 ;    |PLL_main:inst1|                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                               ; PLL_main           ; pll_main     ;
 ;       |PLL_main_0002:pll_main_inst|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst                                   ; PLL_main_0002      ; PLL_main     ;
 ;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i           ; altera_pll         ; work         ;
-;    |SCOMP:inst|                           ; 252 (214)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                   ; SCOMP              ; work         ;
+;    |SCOMP:inst|                           ; 244 (203)           ; 178 (178)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                   ; SCOMP              ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                   ; altsyncram         ; work         ;
 ;          |altsyncram_qm24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_qm24:auto_generated    ; altsyncram_qm24    ; work         ;
-;       |lpm_clshift:shifter|               ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                               ; lpm_clshift        ; work         ;
-;          |lpm_clshift_fuc:auto_generated| ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                ; lpm_clshift_fuc    ; work         ;
+;       |lpm_clshift:shifter|               ; 41 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                               ; lpm_clshift        ; work         ;
+;          |lpm_clshift_fuc:auto_generated| ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                ; lpm_clshift_fuc    ; work         ;
 ;    |TIMER:inst4|                          ; 33 (33)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                                  ; TIMER              ; work         ;
 ;    |clk_div:inst5|                        ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                                ; clk_div            ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+--------------------+--------------+
@@ -347,17 +347,19 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SCOMP_System|NeoPixelController:inst13|wstate                                                                                                    ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+-------------+
-; Name                            ; wstate.storing ; wstate.receiving24bitbluecolor ; wstate.receiving24bitgreencolor ; wstate.receiving24bitredcolor ; wstate.idle ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+-------------+
-; wstate.idle                     ; 0              ; 0                              ; 0                               ; 0                             ; 0           ;
-; wstate.receiving24bitredcolor   ; 0              ; 0                              ; 0                               ; 1                             ; 1           ;
-; wstate.receiving24bitgreencolor ; 0              ; 0                              ; 1                               ; 0                             ; 1           ;
-; wstate.receiving24bitbluecolor  ; 0              ; 1                              ; 0                               ; 0                             ; 1           ;
-; wstate.storing                  ; 1              ; 0                              ; 0                               ; 0                             ; 1           ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+-------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|NeoPixelController:inst13|wstate                                                                                                                                                        ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
+; Name                            ; wstate.storing ; wstate.receiving24bitbluecolor ; wstate.receiving24bitgreencolor ; wstate.receiving24bitredcolor ; wstate.pattern_0_reset ; wstate.pattern_0_storing ; wstate.idle ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
+; wstate.idle                     ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0           ;
+; wstate.pattern_0_storing        ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 1                        ; 1           ;
+; wstate.pattern_0_reset          ; 0              ; 0                              ; 0                               ; 0                             ; 1                      ; 0                        ; 1           ;
+; wstate.receiving24bitredcolor   ; 0              ; 0                              ; 0                               ; 1                             ; 0                      ; 0                        ; 1           ;
+; wstate.receiving24bitgreencolor ; 0              ; 0                              ; 1                               ; 0                             ; 0                      ; 0                        ; 1           ;
+; wstate.receiving24bitbluecolor  ; 0              ; 1                              ; 0                               ; 0                             ; 0                      ; 0                        ; 1           ;
+; wstate.storing                  ; 1              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 1           ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------+
@@ -402,12 +404,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 357   ;
-; Number of registers using Synchronous Clear  ; 57    ;
+; Total registers                              ; 399   ;
+; Number of registers using Synchronous Clear  ; 46    ;
 ; Number of registers using Synchronous Load   ; 130   ;
-; Number of registers using Asynchronous Clear ; 135   ;
+; Number of registers using Asynchronous Clear ; 137   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 223   ;
+; Number of registers using Clock Enable       ; 263   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -436,24 +438,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_count[0]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_count[1]       ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_addr[0]    ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_read_addr[0]     ;
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[6][8]                      ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_buffer[10]     ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[8]  ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[13] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[0]  ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[4]  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[16] ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[21] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[9]                               ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[8]                               ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[6][9]                      ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_buffer[11]     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[10] ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[11] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[17] ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[20] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[2]  ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[6]  ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[6]                               ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[10]                              ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|enc_count            ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|reset_count          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[3]                                     ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[5]                                     ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|bit_count            ;
-; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector29           ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector26           ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
@@ -925,37 +927,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 357                         ;
-;     CLR               ; 103                         ;
-;     ENA               ; 42                          ;
-;     ENA CLR           ; 13                          ;
-;     ENA CLR SCLR      ; 11                          ;
+; arriav_ff             ; 399                         ;
+;     CLR               ; 105                         ;
+;     ENA               ; 82                          ;
+;     ENA CLR           ; 24                          ;
 ;     ENA CLR SLD       ; 8                           ;
 ;     ENA SCLR          ; 27                          ;
 ;     ENA SLD           ; 122                         ;
 ;     SCLR              ; 19                          ;
 ;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 529                         ;
+; arriav_lcell_comb     ; 557                         ;
 ;     arith             ; 96                          ;
 ;         1 data inputs ; 79                          ;
 ;         2 data inputs ; 1                           ;
 ;         5 data inputs ; 16                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 432                         ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 456                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 50                          ;
-;         4 data inputs ; 77                          ;
-;         5 data inputs ; 165                         ;
-;         6 data inputs ; 118                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 61                          ;
+;         4 data inputs ; 103                         ;
+;         5 data inputs ; 170                         ;
+;         6 data inputs ; 91                          ;
 ; boundary_port         ; 64                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 40                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.33                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -974,47 +975,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Apr 01 15:19:43 2022
+    Info: Processing started: Tue Apr 12 13:45:47 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file neopixelcontroller.vhd
-    Info (12022): Found design unit 1: NeoPixelController-internals File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 32
-    Info (12023): Found entity 1: NeoPixelController File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 13
+    Info (12022): Found design unit 1: NeoPixelController-internals File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 33
+    Info (12023): Found entity 1: NeoPixelController File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_IN.vhd Line: 19
-    Info (12023): Found entity 1: DIG_IN File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_IN.vhd Line: 19
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/IO_DECODER.vhd Line: 31
-    Info (12023): Found entity 1: IO_DECODER File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/IO_DECODER.vhd Line: 9
+    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/IO_DECODER.vhd Line: 32
+    Info (12023): Found entity 1: IO_DECODER File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/IO_DECODER.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: PLL_main-rtl File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main.vhd Line: 20
-    Info (12023): Found entity 1: PLL_main File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main.vhd Line: 11
+    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main.vhd Line: 20
+    Info (12023): Found entity 1: PLL_main File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pll_main/pll_main_0002.v
-    Info (12023): Found entity 1: PLL_main_0002 File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main/PLL_main_0002.v Line: 2
+    Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v Line: 2
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "NeoPixelController" for hierarchy "NeoPixelController:inst13"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 57
-Info (12130): Elaborated megafunction instantiation "NeoPixelController:inst13|altsyncram:pixelRAM" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 57
-Info (12133): Instantiated megafunction "NeoPixelController:inst13|altsyncram:pixelRAM" with the following parameter: File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 57
+Info (12128): Elaborating entity "altsyncram" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 61
+Info (12133): Instantiated megafunction "NeoPixelController:inst13|altsyncram:pixelRAM" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK0"
@@ -1066,14 +1067,14 @@ Info (12133): Instantiated megafunction "NeoPixelController:inst13|altsyncram:pi
     Info (12134): Parameter "lpm_hint" = "UNUSED"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2c24.tdf
-    Info (12023): Found entity 1: altsyncram_2c24 File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/altsyncram_2c24.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_2c24" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM|altsyncram_2c24:auto_generated" File: c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_2c24 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_2c24.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_2c24" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM|altsyncram_2c24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main.vhd Line: 32
-Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main/PLL_main_0002.v Line: 85
+Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main/PLL_main_0002.v Line: 85
-Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/PLL_main/PLL_main_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v Line: 85
+Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -1135,9 +1136,9 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_i
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 61
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1189,43 +1190,43 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qm24.tdf
-    Info (12023): Found entity 1: altsyncram_qm24 File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/altsyncram_qm24.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_qm24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_qm24:auto_generated" File: c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 88
+    Info (12023): Found entity 1: altsyncram_qm24 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_qm24.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_qm24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_qm24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/db/lpm_clshift_fuc.tdf Line: 23
-Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/appl/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/SCOMP.vhd Line: 115
+    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/lpm_clshift_fuc.tdf Line: 23
+Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
@@ -1233,47 +1234,47 @@ Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
 Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[9] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[8] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[7] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[6] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[5] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[3] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[4] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[2] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[1] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[0] will power up to High File: //prism.nas.gatech.edu/apeng39/ECE/Desktop/SCOMP_Project_spr22/NeoPixelController.vhd Line: 124
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[9] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[8] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[7] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[6] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[5] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[3] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[4] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[2] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[1] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[0] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 128
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 832 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 901 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 727 logic cells
+    Info (21061): Implemented 796 logic cells
     Info (21064): Implemented 40 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4894 megabytes
-    Info: Processing ended: Fri Apr 01 15:19:57 2022
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Tue Apr 12 13:45:57 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 
