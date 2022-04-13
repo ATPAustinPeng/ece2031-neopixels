@@ -10,12 +10,12 @@ CONTENT
   BEGIN
     [000..7FF] : 0000;  -- Default to NOP
 
-           000 : 0823;  -- 	LOAD REDCOLOR
+           000 : 0824;  -- 	LOAD REDCOLOR
            001 : 98B1;  -- 	OUT PXL_D
            002 : B800;  -- 	LOADI 0
            003 : 98B7;  -- 	OUT PATTERN_NUMBER_EN
            004 : 2823;  -- 	JUMP END
-           005 : 0823;  -- 	LOAD REDCOLOR
+           005 : 0824;  -- 	LOAD REDCOLOR
            006 : 98B2;  -- 	OUT PXL_ALL
            007 : 2823;  -- 	JUMP END
            008 : B80A;  -- 	LOADI 10
@@ -30,22 +30,23 @@ CONTENT
            011 : 2823;  -- 	JUMP END
            012 : B800;  --     LOADI  0
            013 : 98B0;  --     OUT    PXL_A
-           014 : 0824;  --     LOAD   BLUECOLOR
+           014 : 0825;  --     LOAD   BLUECOLOR
            015 : 98B1;  --     OUT    PXL_D
            016 : B801;  -- 	LOADI  1
            017 : 98B0;  --     OUT    PXL_A
-           018 : 0824;  --     LOAD   BLUECOLOR
+           018 : 0825;  --     LOAD   BLUECOLOR
            019 : 98B1;  --     OUT    PXL_D
            01A : B806;  -- 	LOADI  6
            01B : 98B0;  --     OUT    PXL_A
-           01C : 0823;  --     LOAD   REDCOLOR
+           01C : 0824;  --     LOAD   REDCOLOR
            01D : 98B1;  --     OUT    PXL_D
            01E : B8BE;  -- 	LOADI  190
            01F : 98B0;  --     OUT    PXL_A
-           020 : 0825;  --     LOAD   GREENCOLOR
+           020 : 0826;  --     LOAD   GREENCOLOR
            021 : 98B1;  --     OUT    PXL_D
            022 : 2800;  --     JUMP   LOOP
-           023 : F800;  -- REDCOLOR: DW &B1111100000000000
-           024 : 001F;  -- BLUECOLOR: DW &B0000000000011111
-           025 : 07E0;  -- GREENCOLOR: DW &B0000011111100000
+           023 : 0801;  -- PURPLECOLOR: DW &B0000100000000001
+           024 : F800;  -- REDCOLOR: DW    &B1111100000000000
+           025 : 001F;  -- BLUECOLOR: DW &B0000000000011111
+           026 : 07E0;  -- GREENCOLOR: DW &B0000011111100000
   END;
