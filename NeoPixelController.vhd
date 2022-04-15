@@ -47,12 +47,14 @@ architecture internals of NeoPixelController is
 	
 	signal pattern_number: std_logic_vector(15 downto 0); --signal to store the pattern number
 	signal temp_color: std_logic_vector(23 downto 0); --signal to store the color to show it in the pattern
-	signal counter: integer range 0 to 10000;
-	signal delay: integer range 0 to 10000;
+	signal counter: std_logic_vector(23 downto 0);
+	signal delay: std_logic_vector(23 downto 0);
+	signal half_delay: std_logic_vector(23 downto 0);
+	signal checks_for_24bitcolor: std_logic_vector(2 downto 0); -- GRB order
 	
 
 	-- RAM interface state machine signals
-	type write_states is (idle, pattern_0_storing, pattern_0_reset, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
+	type write_states is (idle, determining24bitcolor, pattern_delay, pattern_0_storing, pattern_0_reset, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
 	signal wstate: write_states;
 	signal input_2: integer range 0 to 2;
 
@@ -216,20 +218,39 @@ begin
 		elsif rising_edge(clk_10M) then
 			-- If SCOMP is writing to the address register...
 			if (io_write = '1') and (cs_addr='1') then
-				ram_write_addr <= data_in(7 downto 0);
+				ram_write_addr <= data_in(7 downto 0) - 1;
 			end if;
 			
-			if (pxl_all_en = '1') then
+			--if (pxl_all_en = '1') then
+			--	ram_write_addr <= ram_write_addr + 1;
+		--	end if;
+			
+			--if (wstate = storing) and ((pxl_all_en = '1') or (pattern_number_en = '1')) then
+				--ram_write_addr <= ram_write_addr + 1;
+			--end if;
+			
+			if (io_write = '0') and (pxl_all_en = '1') then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
+
+			if (io_write = '0') and (cs_data = '1') then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
+
+			if (wstate = storing) then
 				ram_write_addr <= ram_write_addr + 1;
 			end if;
 			
-			if (wstate = storing) and ((pxl_all_en = '1') or (pattern_number_en = '1')) then
-				ram_write_addr <= ram_write_addr + 1;
+			if (wstate = pattern_0_storing) then
+				ram_write_addr <= ram_write_addr - 1;
 			end if;
-			--TODO figure out why the color not autoincrementing properly to sync with the pattern
-			if (pattern_number_en = '1') and ((counter >= delay) or (wstate = storing)) then
-				ram_write_addr <= ram_write_addr + 1;
-			end if;
+			
+			
+			--if (counter >= delay) and (wstate = storing) then
+				--ram_write_addr <= ram_write_addr + 1;
+			--end if;
+			
+			
 			
 		end if;
 	
@@ -249,8 +270,10 @@ begin
 			wstate <= idle;
 			ram_we <= '0';
 			ram_write_buffer <= x"000000";
-			delay <= 5000;
-			counter <= 0;
+			delay <= x"0F4240";
+			half_delay <= x"07A120";
+			counter <= x"000000";
+			checks_for_24bitcolor <= "000";
 			-- Note that resetting this device does NOT clear the memory.
 			-- Clearing memory would require cycling through each address
 			-- and setting them all to 0.
@@ -269,28 +292,67 @@ begin
 					-- Change state
 					wstate <= storing;
 				elsif (io_write = '1') and (pxl_24_bitcolor_en = '1') then
+					--ram_write_buffer <= x"000000";
 					wstate <= receiving24bitredcolor;
 					ram_we <= '1';
 				
 				elsif (io_write = '1') and (pattern_number_en = '1') then
 					pattern_number <= data_in(15 downto 0);
 					if (pattern_number = "0") then
-						if (counter < (delay/2)) then
-							counter <= counter + 1;
-						else
-							--counter <= 0;
-							ram_write_buffer <= temp_color;
-							ram_we <= '1';
-							wstate <= pattern_0_storing;
-						end if;
+						wstate <= pattern_delay;
 					elsif (pattern_number = "1") then 
-					   ram_we <= '1';
+						ram_we <= '1';
 						--input_2 <= 2;
 						ram_write_buffer <= ram_write_buffer(22 downto 16) & "0" & ram_write_buffer(14 downto 8) & "0" & ram_Write_buffer(6 downto 0) & "0";
 					--	ram_write_buffer <= temp_color;
 						wstate <= storing;
 					end if;
-				end if;	
+				end if;
+				
+			when determining24bitcolor =>
+				if (io_write = '1') and (pxl_24_red_en = '1') then
+					ram_write_buffer <= ram_write_buffer(23 downto 16) & data_in(7 downto 0) & ram_write_buffer(7 downto 0);
+					wstate <= storing;
+					checks_for_24bitcolor <= checks_for_24bitcolor or "010";
+					if checks_for_24bitcolor = "111" then
+						wstate <= storing;
+					else 
+						wstate <= determining24bitcolor;
+					end if;
+				elsif (io_write = '1') and (pxl_24_green_en = '1') then
+					ram_write_buffer <= data_in(7 downto 0) & ram_write_buffer(15 downto 8) & ram_write_buffer(7 downto 0);
+					wstate <= storing;
+					checks_for_24bitcolor <= checks_for_24bitcolor or "100";
+					if checks_for_24bitcolor = "111" then
+						wstate <= storing;
+					else 
+						wstate <= determining24bitcolor;
+					end if;
+				elsif (io_write = '1') and (pxl_24_blue_en = '1') then
+					ram_write_buffer <= ram_write_buffer(23 downto 8) & data_in(7 downto 0);
+					wstate <= storing;
+					checks_for_24bitcolor <= checks_for_24bitcolor or "001";
+					if checks_for_24bitcolor = "111" then
+						wstate <= storing;
+					else 
+						wstate <= determining24bitcolor;
+					end if;
+				else
+					wstate <= storing;
+				end if;
+				
+				
+			when pattern_delay =>
+				if (counter /= half_delay) then
+					counter <= counter + 1;
+				else
+					--counter <= 0;
+					ram_write_buffer <= temp_color;
+					ram_we <= '1';
+					wstate <= pattern_0_storing;
+				end if;
+				
+				
 			
 			when pattern_0_storing =>
 				ram_we <= '0';
@@ -298,15 +360,14 @@ begin
 
 			
 			when pattern_0_reset =>
-				if (counter < delay) then 
+				if (counter /= delay) then 
 					counter <= counter + 1;
 				else
-					counter <= 0;
+					counter <= x"000000";
 					ram_write_buffer <= x"000000";
 					ram_we <= '1';
 					wstate <= storing;
 				end if;
-				
 					
 			when receiving24bitredcolor =>
 				if (io_write = '1') and (pxl_24_red_en = '1') then
@@ -329,7 +390,6 @@ begin
 				-- same time.
 				ram_we <= '0';
 				wstate <= idle;
-				report "I am in in storing";
 			when others =>
 				wstate <= idle;
 			end case;
