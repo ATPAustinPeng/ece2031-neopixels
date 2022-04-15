@@ -51,12 +51,23 @@ architecture internals of NeoPixelController is
 	signal delay: std_logic_vector(23 downto 0);
 	signal half_delay: std_logic_vector(23 downto 0);
 	signal checks_for_24bitcolor: std_logic_vector(2 downto 0); -- GRB order
+	signal input_2: integer range 0 to 2;
+	signal violet: std_logic_vector(23 downto 0);
+	signal indigo: std_logic_vector(23 downto 0);
+	signal blue: std_logic_vector(23 downto 0);
+	signal green: std_logic_vector(23 downto 0);
+	signal yellow: std_logic_vector(23 downto 0);
+	signal orange: std_logic_vector(23 downto 0);
+	signal red: std_logic_vector(23 downto 0);
+	signal rainbow_starting_addr: std_logic_vector(7 downto 0);
+	signal curr_color: std_logic_vector(6 downto 0);
+	signal rainbow_reset_counter: std_logic_vector(6 downto 0);
 	
 
 	-- RAM interface state machine signals
-	type write_states is (idle, determining24bitcolor, pattern_delay, pattern_0_storing, pattern_0_reset, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
+	type write_states is (idle, rainbow_reset, delay_rainbow_reset, rainbow_color_selection, rainbow, reset_storing, rainbow_storing, delay_rainbow_storing, determining24bitcolor, pattern_delay, pattern_0_storing, pattern_0_reset, receiving24bitredcolor, receiving24bitgreencolor, receiving24bitbluecolor, storing);
 	signal wstate: write_states;
-	signal input_2: integer range 0 to 2;
+
 
 	
 begin
@@ -215,10 +226,11 @@ begin
 		-- SCOMP sends it.
 		if resetn = '0' then
 			ram_write_addr <= x"00";
+			rainbow_starting_addr <= x"00";
 		elsif rising_edge(clk_10M) then
 			-- If SCOMP is writing to the address register...
 			if (io_write = '1') and (cs_addr='1') then
-				ram_write_addr <= data_in(7 downto 0) - 1;
+				ram_write_addr <= data_in(7 downto 0);
 			end if;
 			
 			--if (pxl_all_en = '1') then
@@ -244,6 +256,20 @@ begin
 			if (wstate = pattern_0_storing) then
 				ram_write_addr <= ram_write_addr - 1;
 			end if;
+			
+			if (wstate = rainbow_storing) then
+				ram_write_addr <= ram_write_addr + 1;
+			end if;
+			
+			if (wstate = rainbow_reset) then 
+				ram_write_addr <= ram_write_addr - 1;
+			end if;
+			
+			if (wstate = rainbow) then 
+				rainbow_starting_addr <= rainbow_starting_addr + 1;
+				ram_write_addr <= rainbow_starting_addr;
+			end if;
+			
 			
 			
 			--if (counter >= delay) and (wstate = storing) then
@@ -274,6 +300,13 @@ begin
 			half_delay <= x"07A120";
 			counter <= x"000000";
 			checks_for_24bitcolor <= "000";
+			violet <= x"82eeee";
+			indigo <= x"004b82";
+			blue <= x"0000ff";
+			green <= x"800000";
+			yellow <= x"ffff00";
+			orange <= x"a5ff00";
+			red <= x"00ff00";
 			-- Note that resetting this device does NOT clear the memory.
 			-- Clearing memory would require cycling through each address
 			-- and setting them all to 0.
@@ -301,13 +334,95 @@ begin
 					if (pattern_number = "0") then
 						wstate <= pattern_delay;
 					elsif (pattern_number = "1") then 
-						ram_we <= '1';
-						--input_2 <= 2;
-						ram_write_buffer <= ram_write_buffer(22 downto 16) & "0" & ram_write_buffer(14 downto 8) & "0" & ram_Write_buffer(6 downto 0) & "0";
-					--	ram_write_buffer <= temp_color;
-						wstate <= storing;
+						wstate <= rainbow; -- must not be rainbow just a temp place holder
+					elsif (pattern_number = "010") then
+							wstate <= rainbow;
 					end if;
+					
 				end if;
+			
+			When rainbow =>
+				curr_color <= "0000000";
+				wstate <= rainbow_color_selection;
+					
+			when rainbow_color_selection => 
+				if curr_color = "0000000" then
+					ram_write_buffer <= violet;
+					curr_color <= "0000001";
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0000001" then
+					ram_write_buffer <= indigo;
+					curr_color <= "0000011" ; 
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0000011" then
+					ram_write_buffer <= blue;
+					curr_color <= "0000111" ; 
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0000111" then
+					ram_write_buffer <= green;
+					curr_color <= "0001111" ; 
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0001111" then
+					ram_write_buffer <= yellow;
+					curr_color <= "0011111";  
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0011111" then
+					ram_write_buffer <= orange;
+					curr_color <= "0111111" ; 
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "0111111" then
+					ram_write_buffer <= red;
+					curr_color <= "1111111" ; 
+					wstate <= delay_rainbow_storing;
+				elsif curr_color = "1111111" then
+					rainbow_reset_counter <= "0000000";
+					wstate <= delay_rainbow_reset;
+				end if;
+			
+			when rainbow_reset=>
+				ram_write_buffer <= x"000000";
+				if rainbow_reset_counter = "0000111" then
+					wstate <= rainbow;
+				else
+					rainbow_reset_counter <= rainbow_reset_counter + 1;
+					ram_we <= '1';
+					wstate <= reset_storing;
+				end if;
+			
+			when delay_rainbow_storing =>	
+				ram_we <='1';
+				wstate <= rainbow_storing;
+				
+				--if counter /= delay then
+					--wstate <= delay_rainbow_storing;
+					--counter <= counter + 1;
+				--else 
+					--ram_we <= '1';
+					--counter <= x"000000";
+					--wstate <= rainbow_storing;
+				--end if;
+				
+			when delay_rainbow_reset =>
+				if counter /= delay then
+					wstate <= delay_rainbow_reset;
+					counter <= counter + 1;
+				else 
+					ram_we <= '1';
+					counter <= x"000000";
+					wstate <= rainbow_reset;
+				end if;
+				
+			when reset_storing =>
+				ram_we <= '0';
+				wstate <= rainbow_reset;
+				
+			
+	
+			when rainbow_storing =>
+				ram_we <= '0';
+				wstate <= rainbow_color_selection;
+					
+				
 				
 			when determining24bitcolor =>
 				if (io_write = '1') and (pxl_24_red_en = '1') then

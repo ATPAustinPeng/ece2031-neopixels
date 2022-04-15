@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Apr 13 14:19:41 2022
+Fri Apr 15 13:34:35 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -61,13 +61,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 13 14:19:41 2022       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 15 13:34:34 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 413                                         ;
+; Total registers                 ; 453                                         ;
 ; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 38,912                                      ;
@@ -218,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 ; pixeldata.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/pixeldata.mif            ;          ;
 ; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                                ;          ;
 ; db/altsyncram_qm24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_qm24.tdf   ;          ;
-; pixeltest.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/pixeltest.mif            ;          ;
+; PixelTest.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PixelTest.mif            ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                             ;          ;
 ; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/lpm_clshift_fuc.tdf   ;          ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                              ;          ;
@@ -230,16 +230,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 439                                                                               ;
+; Estimate of Logic utilization (ALMs needed) ; 489                                                                               ;
 ;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 616                                                                               ;
-;     -- 7 input functions                    ; 2                                                                                 ;
-;     -- 6 input functions                    ; 127                                                                               ;
-;     -- 5 input functions                    ; 183                                                                               ;
-;     -- 4 input functions                    ; 109                                                                               ;
-;     -- <=3 input functions                  ; 195                                                                               ;
+; Combinational ALUT usage for logic          ; 707                                                                               ;
+;     -- 7 input functions                    ; 7                                                                                 ;
+;     -- 6 input functions                    ; 130                                                                               ;
+;     -- 5 input functions                    ; 213                                                                               ;
+;     -- 4 input functions                    ; 124                                                                               ;
+;     -- <=3 input functions                  ; 233                                                                               ;
 ;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 413                                                                               ;
+; Dedicated logic registers                   ; 453                                                                               ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 64                                                                                ;
 ; Total MLAB memory bits                      ; 0                                                                                 ;
@@ -251,9 +251,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 439                                                                               ;
-; Total fan-out                               ; 4877                                                                              ;
-; Average fan-out                             ; 4.07                                                                              ;
+; Maximum fan-out                             ; 480                                                                               ;
+; Total fan-out                               ; 5362                                                                              ;
+; Average fan-out                             ; 4.03                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
@@ -262,7 +262,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+--------------------+--------------+
-; |SCOMP_System                             ; 616 (30)            ; 413 (0)                   ; 38912             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                              ; SCOMP_System       ; work         ;
+; |SCOMP_System                             ; 707 (34)            ; 453 (0)                   ; 38912             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                              ; SCOMP_System       ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                                 ; DIG_IN             ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_OUT:inst6                                                                ; DIG_OUT            ; work         ;
 ;    |HEX_DISP_6:inst9|                     ; 45 (3)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                             ; HEX_DISP_6         ; work         ;
@@ -272,8 +272,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                              ; HEX_DISP           ; work         ;
 ;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                              ; HEX_DISP           ; work         ;
-;    |IO_DECODER:inst3|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|IO_DECODER:inst3                                                             ; IO_DECODER         ; work         ;
-;    |NeoPixelController:inst13|            ; 234 (234)           ; 155 (155)                 ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13                                                    ; NeoPixelController ; work         ;
+;    |IO_DECODER:inst3|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|IO_DECODER:inst3                                                             ; IO_DECODER         ; work         ;
+;    |NeoPixelController:inst13|            ; 320 (320)           ; 195 (195)                 ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13                                                    ; NeoPixelController ; work         ;
 ;       |altsyncram:pixelRAM|               ; 0 (0)               ; 0 (0)                     ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13|altsyncram:pixelRAM                                ; altsyncram         ; work         ;
 ;          |altsyncram_2c24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 6144              ; 0          ; 0    ; 0            ; |SCOMP_System|NeoPixelController:inst13|altsyncram:pixelRAM|altsyncram_2c24:auto_generated ; altsyncram_2c24    ; work         ;
 ;    |PLL_main:inst1|                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                               ; PLL_main           ; pll_main     ;
@@ -347,19 +347,28 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SCOMP_System|NeoPixelController:inst13|wstate                                                                                                                                                        ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
-; Name                            ; wstate.storing ; wstate.receiving24bitbluecolor ; wstate.receiving24bitgreencolor ; wstate.receiving24bitredcolor ; wstate.pattern_0_reset ; wstate.pattern_0_storing ; wstate.idle ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
-; wstate.idle                     ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0           ;
-; wstate.pattern_0_storing        ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 1                        ; 1           ;
-; wstate.pattern_0_reset          ; 0              ; 0                              ; 0                               ; 0                             ; 1                      ; 0                        ; 1           ;
-; wstate.receiving24bitredcolor   ; 0              ; 0                              ; 0                               ; 1                             ; 0                      ; 0                        ; 1           ;
-; wstate.receiving24bitgreencolor ; 0              ; 0                              ; 1                               ; 0                             ; 0                      ; 0                        ; 1           ;
-; wstate.receiving24bitbluecolor  ; 0              ; 1                              ; 0                               ; 0                             ; 0                      ; 0                        ; 1           ;
-; wstate.storing                  ; 1              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 1           ;
-+---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|NeoPixelController:inst13|wstate                                                                                                                                                                                                                                                                                                                                                                                                   ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+----------------------+------------------------------+------------------------------+------------------------+----------------------+----------------+--------------------------------+----------------------------+----------------------+-------------+
+; Name                            ; wstate.storing ; wstate.receiving24bitbluecolor ; wstate.receiving24bitgreencolor ; wstate.receiving24bitredcolor ; wstate.pattern_0_reset ; wstate.pattern_0_storing ; wstate.pattern_delay ; wstate.determining24bitcolor ; wstate.delay_rainbow_storing ; wstate.rainbow_storing ; wstate.reset_storing ; wstate.rainbow ; wstate.rainbow_color_selection ; wstate.delay_rainbow_reset ; wstate.rainbow_reset ; wstate.idle ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+----------------------+------------------------------+------------------------------+------------------------+----------------------+----------------+--------------------------------+----------------------------+----------------------+-------------+
+; wstate.idle                     ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 0           ;
+; wstate.rainbow_reset            ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 1                    ; 1           ;
+; wstate.delay_rainbow_reset      ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 1                          ; 0                    ; 1           ;
+; wstate.rainbow_color_selection  ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 1                              ; 0                          ; 0                    ; 1           ;
+; wstate.rainbow                  ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 1              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.reset_storing            ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 1                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.rainbow_storing          ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 1                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.delay_rainbow_storing    ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 1                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.determining24bitcolor    ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 1                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.pattern_delay            ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 1                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.pattern_0_storing        ; 0              ; 0                              ; 0                               ; 0                             ; 0                      ; 1                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.pattern_0_reset          ; 0              ; 0                              ; 0                               ; 0                             ; 1                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.receiving24bitredcolor   ; 0              ; 0                              ; 0                               ; 1                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.receiving24bitgreencolor ; 0              ; 0                              ; 1                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.receiving24bitbluecolor  ; 0              ; 1                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
+; wstate.storing                  ; 1              ; 0                              ; 0                               ; 0                             ; 0                      ; 0                        ; 0                    ; 0                            ; 0                            ; 0                      ; 0                    ; 0              ; 0                              ; 0                          ; 0                    ; 1           ;
++---------------------------------+----------------+--------------------------------+---------------------------------+-------------------------------+------------------------+--------------------------+----------------------+------------------------------+------------------------------+------------------------+----------------------+----------------+--------------------------------+----------------------------+----------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------+
@@ -388,15 +397,17 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; DIG_IN:inst7|B_DI[10..15]             ; Stuck at GND due to stuck port data_in ;
-; SCOMP:inst|state.ex_nop               ; Lost fanout                            ;
-; Total Number of Removed Registers = 7 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++--------------------------------------------------------+----------------------------------------+
+; Register name                                          ; Reason for Removal                     ;
++--------------------------------------------------------+----------------------------------------+
+; DIG_IN:inst7|B_DI[10..15]                              ; Stuck at GND due to stuck port data_in ;
+; SCOMP:inst|state.ex_nop                                ; Lost fanout                            ;
+; NeoPixelController:inst13|wstate.determining24bitcolor ; Stuck at GND due to stuck port data_in ;
+; NeoPixelController:inst13|checks_for_24bitcolor[0..2]  ; Lost fanout                            ;
+; Total Number of Removed Registers = 11                 ;                                        ;
++--------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -404,12 +415,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 413   ;
-; Number of registers using Synchronous Clear  ; 60    ;
+; Total registers                              ; 453   ;
+; Number of registers using Synchronous Clear  ; 77    ;
 ; Number of registers using Synchronous Load   ; 130   ;
-; Number of registers using Asynchronous Clear ; 151   ;
+; Number of registers using Asynchronous Clear ; 177   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 275   ;
+; Number of registers using Clock Enable       ; 311   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -433,33 +444,36 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_count[3]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_addr[6]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_read_addr[5]     ;
-; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[6][9]                      ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_buffer[19]     ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|counter[8]           ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[10] ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[14] ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[22] ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[1]  ;
-; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[3]  ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[2]                               ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[0]                               ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|enc_count            ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|reset_count          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[4]                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|bit_count            ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1                                ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector30           ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 10 LEs               ; 6 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector31           ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector25           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_count[5]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_read_addr[1]         ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 0 LEs                ; 198 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[8][4]                          ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|pixel_buffer[15]         ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|rainbow_reset_counter[0] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_addr[7]        ;
+; 5:1                ; 24 bits   ; 72 LEs        ; 0 LEs                ; 72 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|counter[4]               ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[5]                                   ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[0]                                   ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[8]      ;
+; 18:1               ; 5 bits    ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[15]     ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 24 LEs               ; 18 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[2]      ;
+; 21:1               ; 5 bits    ; 70 LEs        ; 40 LEs               ; 30 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[6]      ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[16]     ;
+; 21:1               ; 6 bits    ; 84 LEs        ; 48 LEs               ; 36 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst13|ram_write_buffer[21]     ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|enc_count                ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|reset_count              ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[5]                                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|bit_count                ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst13|curr_color               ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1                                    ;
+; 27:1               ; 6 bits    ; 108 LEs       ; 72 LEs               ; 36 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector39               ;
+; 28:1               ; 2 bits    ; 36 LEs        ; 22 LEs               ; 14 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector30               ;
+; 29:1               ; 2 bits    ; 38 LEs        ; 22 LEs               ; 16 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst13|Selector40               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -929,37 +943,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 413                         ;
-;     CLR               ; 107                         ;
-;     ENA               ; 82                          ;
-;     ENA CLR           ; 22                          ;
-;     ENA CLR SCLR      ; 14                          ;
+; arriav_ff             ; 453                         ;
+;     CLR               ; 111                         ;
+;     ENA               ; 89                          ;
+;     ENA CLR           ; 34                          ;
+;     ENA CLR SCLR      ; 24                          ;
 ;     ENA CLR SLD       ; 8                           ;
-;     ENA SCLR          ; 27                          ;
+;     ENA SCLR          ; 34                          ;
 ;     ENA SLD           ; 122                         ;
 ;     SCLR              ; 19                          ;
 ;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 622                         ;
-;     arith             ; 110                         ;
-;         1 data inputs ; 93                          ;
-;         2 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 713                         ;
+;     arith             ; 134                         ;
+;         1 data inputs ; 109                         ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 7                           ;
 ;         5 data inputs ; 16                          ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 510                         ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 572                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 67                          ;
-;         4 data inputs ; 109                         ;
-;         5 data inputs ; 167                         ;
-;         6 data inputs ; 127                         ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 124                         ;
+;         5 data inputs ; 197                         ;
+;         6 data inputs ; 130                         ;
 ; boundary_port         ; 64                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 40                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.81                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -968,7 +983,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -978,7 +993,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Apr 13 14:19:32 2022
+    Info: Processing started: Fri Apr 15 13:34:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file neopixelcontroller.vhd
@@ -1016,24 +1031,234 @@ Info (12021): Found 1 design units, including 1 entities, in source file pll_mai
     Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PLL_main/PLL_main_0002.v Line: 2
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "NeoPixelController" for hierarchy "NeoPixelController:inst13"
-Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(209): inferring latch(es) for signal or variable "delay", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[0]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[1]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[2]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[3]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[4]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[5]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[6]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[7]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[8]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[9]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[10]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[11]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[12]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (10041): Inferred latch for "delay[13]" at NeoPixelController.vhd(209) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 209
-Info (12128): Elaborating entity "altsyncram" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 65
-Info (12130): Elaborated megafunction instantiation "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 65
-Info (12133): Instantiated megafunction "NeoPixelController:inst13|altsyncram:pixelRAM" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "delay", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "half_delay", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "violet", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "indigo", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "yellow", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "orange", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Warning (10631): VHDL Process Statement warning at NeoPixelController.vhd(222): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "red[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "orange[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "yellow[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "green[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "blue[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "indigo[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "violet[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "half_delay[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[0]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[1]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[2]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[3]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[4]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[5]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[6]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[7]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[8]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[9]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[10]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[11]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[12]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[13]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[14]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[15]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[16]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[17]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[18]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[19]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[20]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[21]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[22]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (10041): Inferred latch for "delay[23]" at NeoPixelController.vhd(222) File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 222
+Info (12128): Elaborating entity "altsyncram" for hierarchy "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 78
+Info (12130): Elaborated megafunction instantiation "NeoPixelController:inst13|altsyncram:pixelRAM" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 78
+Info (12133): Instantiated megafunction "NeoPixelController:inst13|altsyncram:pixelRAM" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 78
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK0"
@@ -1210,6 +1435,17 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qm24.tdf
     Info (12023): Found entity 1: altsyncram_qm24 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_qm24.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_qm24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_qm24:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113031): 61 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 61 warnings found, and 10 warnings are reported. File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/PixelTest.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 13
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 14
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 15
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 16
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 17
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 18
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 19
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 20
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 21
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 22
 Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
 Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
 Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
@@ -1270,29 +1506,29 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/HEX_DISP.vhd Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[9] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[8] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[7] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[6] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[5] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[3] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[4] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[2] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[1] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[0] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 132
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[9] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[8] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[7] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[6] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[5] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|reset_count[3] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[4] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[2] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[1] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+    Critical Warning (18010): Register NeoPixelController:inst13|bit_count[0] will power up to High File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/NeoPixelController.vhd Line: 145
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 966 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1059 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 861 logic cells
+    Info (21061): Implemented 954 logic cells
     Info (21064): Implemented 40 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Wed Apr 13 14:19:41 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 4886 megabytes
+    Info: Processing ended: Fri Apr 15 13:34:35 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:26
 
 
