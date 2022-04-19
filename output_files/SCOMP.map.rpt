@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Tue Apr 19 13:04:26 2022
+Tue Apr 19 15:49:48 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 19 13:04:26 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 19 15:49:48 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SCOMP                                       ;
 ; Top-level Entity Name           ; SCOMP_System                                ;
@@ -218,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 ; pixeldata.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/pixeldata.mif            ;          ;
 ; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altera_pll.v                                ;          ;
 ; db/altsyncram_v334.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_v334.tdf   ;          ;
-; demonstration.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/demonstration.mif        ;          ;
+; Demonstration.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/Demonstration.mif        ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                             ;          ;
 ; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/lpm_clshift_fuc.tdf   ;          ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                              ;          ;
@@ -981,7 +981,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -991,7 +991,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Apr 19 13:04:15 2022
+    Info: Processing started: Tue Apr 19 15:49:24 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file neopixelcontroller.vhd
@@ -1435,6 +1435,17 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v334.tdf
     Info (12023): Found entity 1: altsyncram_v334 File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/db/altsyncram_v334.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_v334" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_v334:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113031): 157 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 157 warnings found, and 10 warnings are reported. File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/Demonstration.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 13
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 14
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 15
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 16
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 17
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 18
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 19
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 20
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 21
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/ Line: 22
 Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
 Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
 Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/chris/Documents/GT/ECE 2031 Digital Design Lab/ece2031-neopixels/SCOMP.vhd Line: 88
@@ -1514,10 +1525,10 @@ Info (21057): Implemented 1027 device resources after synthesis - the final reso
     Info (21061): Implemented 922 logic cells
     Info (21064): Implemented 40 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Tue Apr 19 13:04:26 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:19
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 4895 megabytes
+    Info: Processing ended: Tue Apr 19 15:49:48 2022
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:25
 
 

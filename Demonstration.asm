@@ -9,8 +9,8 @@
  ; 2 - 
  ; 3 - comparison between 16 bit and 24 bit --- does not work
  ; 4 - auto increment 5 times from 0 with Green ----- ok
- ; 5 - rainbow
- ; 6 - single color ---- does not work
+ ; 5 - rainbow  ------ ok 
+ ; 6 - single color ---- ok
  ; 7 - all blue --- together prb
  ; 8 - all green ---- togther prb
  ; 9 - all red  ------ together prb
