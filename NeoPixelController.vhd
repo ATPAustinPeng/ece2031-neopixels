@@ -62,6 +62,7 @@ architecture internals of NeoPixelController is
 	signal rainbow_starting_addr: std_logic_vector(7 downto 0);
 	signal curr_color: std_logic_vector(6 downto 0);
 	signal rainbow_reset_counter: std_logic_vector(6 downto 0);
+	signal num_times: std_logic_vector(23 downto 0); -- to exit the rainbow
 	
 
 	-- RAM interface state machine signals
@@ -270,8 +271,6 @@ begin
 				ram_write_addr <= rainbow_starting_addr;
 			end if;
 			
-			
-			
 			--if (counter >= delay) and (wstate = storing) then
 				--ram_write_addr <= ram_write_addr + 1;
 			--end if;
@@ -307,6 +306,7 @@ begin
 			yellow <= x"ffff00";
 			orange <= x"a5ff00";
 			red <= x"00ff00";
+			num_times <= x"000000";
 			-- Note that resetting this device does NOT clear the memory.
 			-- Clearing memory would require cycling through each address
 			-- and setting them all to 0.
@@ -334,16 +334,15 @@ begin
 					if (pattern_number = "0") then
 						wstate <= pattern_delay;
 					elsif (pattern_number = "1") then 
-						wstate <= rainbow; -- must not be rainbow just a temp place holder
+						wstate <= idle;
 					elsif (pattern_number = "010") then
 							wstate <= rainbow;
 					end if;
-					
 				end if;
 			
 			When rainbow =>
-				curr_color <= "0000000";
-				wstate <= rainbow_color_selection;
+					curr_color <= "0000000";
+					wstate <= rainbow_color_selection;
 					
 			when rainbow_color_selection => 
 				if curr_color = "0000000" then
@@ -382,7 +381,7 @@ begin
 			when rainbow_reset=>
 				ram_write_buffer <= x"000000";
 				if rainbow_reset_counter = "0000111" then
-					wstate <= rainbow;
+					wstate <= idle;
 				else
 					rainbow_reset_counter <= rainbow_reset_counter + 1;
 					ram_we <= '1';
@@ -422,41 +421,6 @@ begin
 				ram_we <= '0';
 				wstate <= rainbow_color_selection;
 					
-				
-				
-			when determining24bitcolor =>
-				if (io_write = '1') and (pxl_24_red_en = '1') then
-					ram_write_buffer <= ram_write_buffer(23 downto 16) & data_in(7 downto 0) & ram_write_buffer(7 downto 0);
-					wstate <= storing;
-					checks_for_24bitcolor <= checks_for_24bitcolor or "010";
-					if checks_for_24bitcolor = "111" then
-						wstate <= storing;
-					else 
-						wstate <= determining24bitcolor;
-					end if;
-				elsif (io_write = '1') and (pxl_24_green_en = '1') then
-					ram_write_buffer <= data_in(7 downto 0) & ram_write_buffer(15 downto 8) & ram_write_buffer(7 downto 0);
-					wstate <= storing;
-					checks_for_24bitcolor <= checks_for_24bitcolor or "100";
-					if checks_for_24bitcolor = "111" then
-						wstate <= storing;
-					else 
-						wstate <= determining24bitcolor;
-					end if;
-				elsif (io_write = '1') and (pxl_24_blue_en = '1') then
-					ram_write_buffer <= ram_write_buffer(23 downto 8) & data_in(7 downto 0);
-					wstate <= storing;
-					checks_for_24bitcolor <= checks_for_24bitcolor or "001";
-					if checks_for_24bitcolor = "111" then
-						wstate <= storing;
-					else 
-						wstate <= determining24bitcolor;
-					end if;
-				else
-					wstate <= storing;
-				end if;
-				
-				
 			when pattern_delay =>
 				if (counter /= half_delay) then
 					counter <= counter + 1;
