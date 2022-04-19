@@ -1,0 +1,170 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 9000;  -- 	IN		Switches
+           001 : 4892;  -- 	AND		Bit0
+           002 : 382F;  -- 	JPOS 	ControlPixels
+           003 : 9000;  -- 	IN		Switches
+           004 : 4893;  -- 	AND		Bit1
+           005 : 383F;  -- 	JPOS 	Color24Bit
+           006 : 9000;  -- 	IN		Switches
+           007 : 4894;  -- 	AND		Bit2
+           008 : 3855;  -- 	JPOS 	Change16Bit
+           009 : 9000;  -- 	IN		Switches
+           00A : 4895;  -- 	AND		Bit3
+           00B : 3820;  -- 	JPOS 	Comp
+           00C : 9000;  -- 	IN 		Switches
+           00D : 4896;  -- 	AND		Bit4
+           00E : 3859;  -- 	JPOS	AutoIn
+           00F : 9000;  -- 	IN		Switches
+           010 : 4897;  -- 	AND		Bit5
+           011 : 3865;  -- 	JPOS	RainBow	
+           012 : 089C;  -- 	LOAD zero
+           013 : 9000;  -- 	IN 		Switches
+           014 : 4898;  -- 	AND		Bit6
+           015 : 386B;  -- 	JPOS	OneColorPattern
+           016 : 9000;  -- 	IN 		Switches
+           017 : 4899;  -- 	AND		Bit7
+           018 : 387F;  -- 	JPOS	ChangeAllBlue
+           019 : 9000;  -- 	IN 		Switches
+           01A : 489A;  -- 	AND		Bit8
+           01B : 3879;  -- 	JPOS	ChangeAllGreen
+           01C : 9000;  -- 	IN 		Switches
+           01D : 489B;  -- 	AND		Bit9
+           01E : 3873;  -- 	JPOS	ChangeAllRED
+           01F : 2800;  -- 	JUMP 	Start
+           020 : 9000;  -- 	IN 		Switches
+           021 : 4895;  -- 	AND 	BIT3
+           022 : 4000;  -- 	JZERO 	START
+           023 : B800;  -- 	LOADI 0
+           024 : 98B0;  -- 	OUT PXL_A
+           025 : 088E;  -- 	LOAD BLUECOLOR
+           026 : 98B1;  -- 	OUT PXL_D
+           027 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           028 : B800;  -- 	LOADI  &B00000000
+           029 : 98B4;  -- 	OUT    PXL_24_RED
+           02A : B800;  -- 	LOADI  &B00000000
+           02B : 98B5;  -- 	OUT    PXL_24_GREEN
+           02C : B8FF;  -- 	LOADI  &B11111111
+           02D : 98B6;  -- 	OUT    PXL_24_BLUE
+           02E : 2800;  -- 	JUMP   Start
+           02F : 9000;  -- 	IN 		Switches
+           030 : 4892;  -- 	AND 	BIT0
+           031 : 4000;  -- 	JZERO 	START
+           032 : B800;  -- 	LOADI  0 
+           033 : 98B0;  -- 	OUT	   PXL_A
+           034 : 088E;  -- 	LOAD   BLUECOLOR
+           035 : 98B1;  -- 	OUT    PXL_D
+           036 : B806;  -- 	LOADI  6
+           037 : 98B0;  --     OUT    PXL_A
+           038 : 088D;  --     LOAD   REDCOLOR
+           039 : 98B1;  --     OUT    PXL_D
+           03A : B8BE;  -- 	LOADI  190
+           03B : 98B0;  --     OUT    PXL_A
+           03C : 088F;  --     LOAD   GREENCOLOR
+           03D : 98B1;  --     OUT    PXL_D
+           03E : 2800;  -- 	JUMP   Start
+           03F : 9000;  -- 	IN 	   Switches 
+           040 : 4893;  -- 	AND	   BIT1
+           041 : 4000;  -- 	JZERO  START 
+           042 : B801;  -- 	LOADI  1
+           043 : 98B0;  -- 	OUT PXL_A
+           044 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           045 : B8FF;  -- 	LOADI  &B11111111
+           046 : 98B4;  -- 	OUT    PXL_24_RED
+           047 : B8FF;  -- 	LOADI  &B11111111
+           048 : 98B5;  -- 	OUT    PXL_24_GREEN
+           049 : B800;  -- 	LOADI  &B00000000
+           04A : 98B6;  -- 	OUT    PXL_24_BLUE
+           04B : B806;  -- 	LOADI  6
+           04C : 98B0;  -- 	OUT PXL_A
+           04D : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           04E : B8FF;  -- 	LOADI  &B11111111
+           04F : 98B4;  -- 	OUT    PXL_24_RED
+           050 : B8FF;  -- 	LOADI  &B11111111
+           051 : 98B5;  -- 	OUT    PXL_24_GREEN
+           052 : B800;  -- 	LOADI  &B00000000
+           053 : 98B6;  -- 	OUT    PXL_24_BLUE
+           054 : 2800;  -- 	JUMP   Start
+           055 : 9000;  -- 	IN	   Switches
+           056 : 4894;  -- 	AND	   BIT2
+           057 : 4000;  -- 	JZERO  START
+           058 : 2800;  -- 	JUMP   START
+           059 : 9000;  -- 	IN	   Switches
+           05A : 4896;  -- 	AND	   BIT4
+           05B : 4000;  -- 	JZERO  START
+           05C : B800;  -- 	LoadI  0
+           05D : 98B0;  -- 	OUT    PXL_A
+           05E : 088F;  -- 	LOAD   GREENCOLOR
+           05F : 98B1;  -- 	OUT    PXL_D
+           060 : 98B1;  -- 	OUT    PXL_D
+           061 : 98B1;  -- 	OUT    PXL_D
+           062 : 98B1;  -- 	OUT    PXL_D
+           063 : 98B1;  -- 	OUT    PXL_D
+           064 : 2800;  -- 	JUMP   Start
+           065 : 9000;  -- 	IN	   Switches
+           066 : 4897;  -- 	AND	   BIT5
+           067 : 4000;  -- 	JZERO  START
+           068 : B802;  -- 	LOADI 2
+           069 : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
+           06A : 2800;  -- 	JUMP   Start
+           06B : 9000;  -- 	IN	   Switches
+           06C : 4898;  -- 	AND	   BIT6
+           06D : 4000;  -- 	JZERO  START
+           06E : 088D;  -- 	LOAD REDCOLOR
+           06F : 98B1;  -- 	OUT PXL_D
+           070 : B800;  -- 	LOADI 0
+           071 : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
+           072 : 2800;  -- 	JUMP   Start
+           073 : 9000;  -- 	IN	  Switches
+           074 : 489B;  -- 	AND	  Bit9
+           075 : 4000;  -- 	JZERO START
+           076 : 088D;  -- 	LOAD REDCOLOR
+           077 : 98B2;  -- 	OUT  PXL_ALL
+           078 : 2800;  -- 	JUMP   Start
+           079 : 9000;  -- 	IN	   Switches
+           07A : 489A;  -- 	AND	   BIT8
+           07B : 4000;  -- 	JZERO  START
+           07C : 088F;  -- 	LOAD   GREENCOLOR
+           07D : 98B2;  -- 	OUT    PXL_ALL
+           07E : 2800;  -- 	JUMP   Start
+           07F : 9000;  -- 	IN	   Switches
+           080 : 4899;  -- 	AND	   BIT7
+           081 : 4000;  -- 	JZERO  START
+           082 : 088E;  -- 	LOAD   BLUECOLOR
+           083 : 98B2;  -- 	OUT    PXL_ALL
+           084 : 2800;  -- 	JUMP   Start
+           085 : 108B;  -- 	STORE  DelayTime   ; Save the desired delay
+           086 : 9802;  -- 	OUT    Timer       ; Reset the timer
+           087 : 9002;  -- 	IN     Timer       ; Get the current timer value
+           088 : 208B;  -- 	SUB    DelayTime
+           089 : 3087;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
+           08A : 8800;  -- 	RETURN
+           08B : 0000;  -- DelayTime: DW 0
+           08C : 0014;  -- WAIT_FOR_RAINBOW: DW 20
+           08D : F800;  -- REDCOLOR:   DW &B1111100000000000
+           08E : 001F;  -- BLUECOLOR:  DW &B0000000000011111
+           08F : 07E0;  -- GREENCOLOR: DW &B0000011111100000
+           090 : FFFF;  -- WHITECOLOR: DW &B1111111111111111
+           091 : 0000;  -- BitReset:	DW &B0000000000000000
+           092 : 0001;  -- Bit0:	    DW &B0000000000000001
+           093 : 0002;  -- Bit1:	    DW &B0000000000000010
+           094 : 0004;  -- Bit2:	    DW &B0000000000000100
+           095 : 0008;  -- Bit3:	    DW &B0000000000001000
+           096 : 0010;  -- Bit4:	    DW &B0000000000010000
+           097 : 0020;  -- Bit5:	    DW &B0000000000100000
+           098 : 0040;  -- Bit6:	    DW &B0000000001000000
+           099 : 0080;  -- Bit7:	    DW &B0000000010000000
+           09A : 0100;  -- Bit8:	    DW &B0000000100000000
+           09B : 0200;  -- Bit9:	    DW &B0000001000000000
+           09C : 0000;  -- zero:       DW &B0000000000000000
+  END;
