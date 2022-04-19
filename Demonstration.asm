@@ -6,7 +6,7 @@
  
  ; 0 - set 0,6,190 to 16 bit BRG  ----- ok
  ; 1 - set 1, 6 to 24 bit yellow ----- works-ish
- ; 2 - 
+ ; 2 - ece 2031 using 16 bits
  ; 3 - comparison between 16 bit and 24 bit --- does not work
  ; 4 - auto increment 5 times from 0 with Green ----- ok
  ; 5 - rainbow  ------ ok 
@@ -19,7 +19,7 @@
  ; Rainbow pattern does not clear completely, so demo it towards the end
  ; In demo, dont demo pxl_all repeatedly and dont do anything too quickly 
  
- ; Possible order for switches: 1, 2, 4, 6, 5, 7/8/9
+ ; Possible order for switches: 0, 1, 4, 6, 5, 7/8/9
  ; order: 16 bit for 255 pxls, 24 bit color, autoincrement, single color pattern, rainbow color pattern, pxl_all
 
 ORG 0
@@ -85,13 +85,70 @@ Comp:
 	AND 	BIT3
 	JZERO 	START
 	
-	LOADI 0
-	OUT PXL_A
-	LOAD BLUECOLOR
-	OUT PXL_D
-	
+	LOADI  17
+	OUT    PXL_A
 	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
 	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  45
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
+	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  47
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
+	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  79
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
+	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  83
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
+	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  173
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
+	OUT    PXL_24_RED
+	LOADI  &B00000000
+	OUT    PXL_24_GREEN
+	LOADI  &B11111111
+	OUT    PXL_24_BLUE
+	
+	LOADI  175
+	OUT    PXL_A
+	OUT    PXL_24BITCOLOR
+	LOADI  &B11111111
 	OUT    PXL_24_RED
 	LOADI  &B00000000
 	OUT    PXL_24_GREEN
@@ -130,7 +187,7 @@ Color24Bit:
 	JZERO  START 
 	
 	LOADI  1
-	OUT PXL_A
+	OUT    PXL_A
 	OUT    PXL_24BITCOLOR
 	LOADI  &B11111111
 	OUT    PXL_24_RED
@@ -155,9 +212,423 @@ Color24Bit:
 
 
 Change16Bit:
+	
 	IN	   Switches
 	AND	   BIT2
 	JZERO  START
+	
+	LOADI  0 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	
+	LOADI  2
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  3
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  4 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  6 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  7
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  8 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  10 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  11
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  12 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  21 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  22 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  23
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  25
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  26 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  27 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  29
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  30 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  31 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  32
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  36
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  40
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  51 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  55
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  57
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  62
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  63
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  64
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  66
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  70
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  72
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  76
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  87
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  91
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  95
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  96
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  97 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  98
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  100 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  104
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  105
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  106
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  115
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  116
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  117
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  119
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  121
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  123
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  124
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  125
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  127
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  128
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  130
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  134
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  136
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  138
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  151
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  155
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  159
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  160
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  161
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  162
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  164
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  165
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  166
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  168
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  169
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  170
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  179
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	
+	LOADI  180 
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  181
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  183
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  184
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  185
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  187
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  188
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  189
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
+	
+	LOADI  191
+	OUT	   PXL_A
+	LOAD   BLUECOLOR
+	OUT    PXL_D
 	
 	
 	JUMP   START
@@ -222,7 +693,7 @@ ChangeAllBlue:
 	AND	   BIT7
 	JZERO  START
 	
-	LOAD   BLUECOLOR
+	LOAD   zero
 	OUT    PXL_ALL
 	
 	JUMP   Start

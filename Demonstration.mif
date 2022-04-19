@@ -11,160 +11,524 @@ CONTENT
     [000..7FF] : 0000;  -- Default to NOP
 
            000 : 9000;  -- 	IN		Switches
-           001 : 4892;  -- 	AND		Bit0
-           002 : 382F;  -- 	JPOS 	ControlPixels
+           001 : 49FE;  -- 	AND		Bit0
+           002 : 3863;  -- 	JPOS 	ControlPixels
            003 : 9000;  -- 	IN		Switches
-           004 : 4893;  -- 	AND		Bit1
-           005 : 383F;  -- 	JPOS 	Color24Bit
+           004 : 49FF;  -- 	AND		Bit1
+           005 : 3873;  -- 	JPOS 	Color24Bit
            006 : 9000;  -- 	IN		Switches
-           007 : 4894;  -- 	AND		Bit2
-           008 : 3855;  -- 	JPOS 	Change16Bit
+           007 : 4A00;  -- 	AND		Bit2
+           008 : 3889;  -- 	JPOS 	Change16Bit
            009 : 9000;  -- 	IN		Switches
-           00A : 4895;  -- 	AND		Bit3
+           00A : 4A01;  -- 	AND		Bit3
            00B : 3820;  -- 	JPOS 	Comp
            00C : 9000;  -- 	IN 		Switches
-           00D : 4896;  -- 	AND		Bit4
-           00E : 3859;  -- 	JPOS	AutoIn
+           00D : 4A02;  -- 	AND		Bit4
+           00E : 39C5;  -- 	JPOS	AutoIn
            00F : 9000;  -- 	IN		Switches
-           010 : 4897;  -- 	AND		Bit5
-           011 : 3865;  -- 	JPOS	RainBow	
-           012 : 089C;  -- 	LOAD zero
+           010 : 4A03;  -- 	AND		Bit5
+           011 : 39D1;  -- 	JPOS	RainBow	
+           012 : 0A08;  -- 	LOAD zero
            013 : 9000;  -- 	IN 		Switches
-           014 : 4898;  -- 	AND		Bit6
-           015 : 386B;  -- 	JPOS	OneColorPattern
+           014 : 4A04;  -- 	AND		Bit6
+           015 : 39D7;  -- 	JPOS	OneColorPattern
            016 : 9000;  -- 	IN 		Switches
-           017 : 4899;  -- 	AND		Bit7
-           018 : 387F;  -- 	JPOS	ChangeAllBlue
+           017 : 4A05;  -- 	AND		Bit7
+           018 : 39EB;  -- 	JPOS	ChangeAllBlue
            019 : 9000;  -- 	IN 		Switches
-           01A : 489A;  -- 	AND		Bit8
-           01B : 3879;  -- 	JPOS	ChangeAllGreen
+           01A : 4A06;  -- 	AND		Bit8
+           01B : 39E5;  -- 	JPOS	ChangeAllGreen
            01C : 9000;  -- 	IN 		Switches
-           01D : 489B;  -- 	AND		Bit9
-           01E : 3873;  -- 	JPOS	ChangeAllRED
+           01D : 4A07;  -- 	AND		Bit9
+           01E : 39DF;  -- 	JPOS	ChangeAllRED
            01F : 2800;  -- 	JUMP 	Start
            020 : 9000;  -- 	IN 		Switches
-           021 : 4895;  -- 	AND 	BIT3
+           021 : 4A01;  -- 	AND 	BIT3
            022 : 4000;  -- 	JZERO 	START
-           023 : B800;  -- 	LOADI 0
-           024 : 98B0;  -- 	OUT PXL_A
-           025 : 088E;  -- 	LOAD BLUECOLOR
-           026 : 98B1;  -- 	OUT PXL_D
-           027 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           023 : B811;  -- 	LOADI  17
+           024 : 98B0;  -- 	OUT    PXL_A
+           025 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           026 : B8FF;  -- 	LOADI  &B11111111
+           027 : 98B4;  -- 	OUT    PXL_24_RED
            028 : B800;  -- 	LOADI  &B00000000
-           029 : 98B4;  -- 	OUT    PXL_24_RED
-           02A : B800;  -- 	LOADI  &B00000000
-           02B : 98B5;  -- 	OUT    PXL_24_GREEN
-           02C : B8FF;  -- 	LOADI  &B11111111
-           02D : 98B6;  -- 	OUT    PXL_24_BLUE
-           02E : 2800;  -- 	JUMP   Start
-           02F : 9000;  -- 	IN 		Switches
-           030 : 4892;  -- 	AND 	BIT0
-           031 : 4000;  -- 	JZERO 	START
-           032 : B800;  -- 	LOADI  0 
-           033 : 98B0;  -- 	OUT	   PXL_A
-           034 : 088E;  -- 	LOAD   BLUECOLOR
-           035 : 98B1;  -- 	OUT    PXL_D
-           036 : B806;  -- 	LOADI  6
-           037 : 98B0;  --     OUT    PXL_A
-           038 : 088D;  --     LOAD   REDCOLOR
-           039 : 98B1;  --     OUT    PXL_D
-           03A : B8BE;  -- 	LOADI  190
-           03B : 98B0;  --     OUT    PXL_A
-           03C : 088F;  --     LOAD   GREENCOLOR
-           03D : 98B1;  --     OUT    PXL_D
-           03E : 2800;  -- 	JUMP   Start
-           03F : 9000;  -- 	IN 	   Switches 
-           040 : 4893;  -- 	AND	   BIT1
-           041 : 4000;  -- 	JZERO  START 
-           042 : B801;  -- 	LOADI  1
-           043 : 98B0;  -- 	OUT PXL_A
-           044 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           029 : 98B5;  -- 	OUT    PXL_24_GREEN
+           02A : B8FF;  -- 	LOADI  &B11111111
+           02B : 98B6;  -- 	OUT    PXL_24_BLUE
+           02C : B82D;  -- 	LOADI  45
+           02D : 98B0;  -- 	OUT    PXL_A
+           02E : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           02F : B8FF;  -- 	LOADI  &B11111111
+           030 : 98B4;  -- 	OUT    PXL_24_RED
+           031 : B800;  -- 	LOADI  &B00000000
+           032 : 98B5;  -- 	OUT    PXL_24_GREEN
+           033 : B8FF;  -- 	LOADI  &B11111111
+           034 : 98B6;  -- 	OUT    PXL_24_BLUE
+           035 : B82F;  -- 	LOADI  47
+           036 : 98B0;  -- 	OUT    PXL_A
+           037 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           038 : B8FF;  -- 	LOADI  &B11111111
+           039 : 98B4;  -- 	OUT    PXL_24_RED
+           03A : B800;  -- 	LOADI  &B00000000
+           03B : 98B5;  -- 	OUT    PXL_24_GREEN
+           03C : B8FF;  -- 	LOADI  &B11111111
+           03D : 98B6;  -- 	OUT    PXL_24_BLUE
+           03E : B84F;  -- 	LOADI  79
+           03F : 98B0;  -- 	OUT    PXL_A
+           040 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           041 : B8FF;  -- 	LOADI  &B11111111
+           042 : 98B4;  -- 	OUT    PXL_24_RED
+           043 : B800;  -- 	LOADI  &B00000000
+           044 : 98B5;  -- 	OUT    PXL_24_GREEN
            045 : B8FF;  -- 	LOADI  &B11111111
-           046 : 98B4;  -- 	OUT    PXL_24_RED
-           047 : B8FF;  -- 	LOADI  &B11111111
-           048 : 98B5;  -- 	OUT    PXL_24_GREEN
-           049 : B800;  -- 	LOADI  &B00000000
-           04A : 98B6;  -- 	OUT    PXL_24_BLUE
-           04B : B806;  -- 	LOADI  6
-           04C : 98B0;  -- 	OUT PXL_A
-           04D : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           046 : 98B6;  -- 	OUT    PXL_24_BLUE
+           047 : B853;  -- 	LOADI  83
+           048 : 98B0;  -- 	OUT    PXL_A
+           049 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           04A : B8FF;  -- 	LOADI  &B11111111
+           04B : 98B4;  -- 	OUT    PXL_24_RED
+           04C : B800;  -- 	LOADI  &B00000000
+           04D : 98B5;  -- 	OUT    PXL_24_GREEN
            04E : B8FF;  -- 	LOADI  &B11111111
-           04F : 98B4;  -- 	OUT    PXL_24_RED
-           050 : B8FF;  -- 	LOADI  &B11111111
-           051 : 98B5;  -- 	OUT    PXL_24_GREEN
-           052 : B800;  -- 	LOADI  &B00000000
-           053 : 98B6;  -- 	OUT    PXL_24_BLUE
-           054 : 2800;  -- 	JUMP   Start
-           055 : 9000;  -- 	IN	   Switches
-           056 : 4894;  -- 	AND	   BIT2
-           057 : 4000;  -- 	JZERO  START
-           058 : 2800;  -- 	JUMP   START
-           059 : 9000;  -- 	IN	   Switches
-           05A : 4896;  -- 	AND	   BIT4
-           05B : 4000;  -- 	JZERO  START
-           05C : B800;  -- 	LoadI  0
-           05D : 98B0;  -- 	OUT    PXL_A
-           05E : 088F;  -- 	LOAD   GREENCOLOR
-           05F : 98B1;  -- 	OUT    PXL_D
-           060 : 98B1;  -- 	OUT    PXL_D
-           061 : 98B1;  -- 	OUT    PXL_D
-           062 : 98B1;  -- 	OUT    PXL_D
-           063 : 98B1;  -- 	OUT    PXL_D
-           064 : 2800;  -- 	JUMP   Start
-           065 : 9000;  -- 	IN	   Switches
-           066 : 4897;  -- 	AND	   BIT5
-           067 : 4000;  -- 	JZERO  START
-           068 : B802;  -- 	LOADI 2
-           069 : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
-           06A : 2800;  -- 	JUMP   Start
-           06B : 9000;  -- 	IN	   Switches
-           06C : 4898;  -- 	AND	   BIT6
-           06D : 4000;  -- 	JZERO  START
-           06E : 088D;  -- 	LOAD REDCOLOR
-           06F : 98B1;  -- 	OUT PXL_D
-           070 : B800;  -- 	LOADI 0
-           071 : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
+           04F : 98B6;  -- 	OUT    PXL_24_BLUE
+           050 : B8AD;  -- 	LOADI  173
+           051 : 98B0;  -- 	OUT    PXL_A
+           052 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           053 : B8FF;  -- 	LOADI  &B11111111
+           054 : 98B4;  -- 	OUT    PXL_24_RED
+           055 : B800;  -- 	LOADI  &B00000000
+           056 : 98B5;  -- 	OUT    PXL_24_GREEN
+           057 : B8FF;  -- 	LOADI  &B11111111
+           058 : 98B6;  -- 	OUT    PXL_24_BLUE
+           059 : B8AF;  -- 	LOADI  175
+           05A : 98B0;  -- 	OUT    PXL_A
+           05B : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           05C : B8FF;  -- 	LOADI  &B11111111
+           05D : 98B4;  -- 	OUT    PXL_24_RED
+           05E : B800;  -- 	LOADI  &B00000000
+           05F : 98B5;  -- 	OUT    PXL_24_GREEN
+           060 : B8FF;  -- 	LOADI  &B11111111
+           061 : 98B6;  -- 	OUT    PXL_24_BLUE
+           062 : 2800;  -- 	JUMP   Start
+           063 : 9000;  -- 	IN 		Switches
+           064 : 49FE;  -- 	AND 	BIT0
+           065 : 4000;  -- 	JZERO 	START
+           066 : B800;  -- 	LOADI  0 
+           067 : 98B0;  -- 	OUT	   PXL_A
+           068 : 09FA;  -- 	LOAD   BLUECOLOR
+           069 : 98B1;  -- 	OUT    PXL_D
+           06A : B806;  -- 	LOADI  6
+           06B : 98B0;  --     OUT    PXL_A
+           06C : 09F9;  --     LOAD   REDCOLOR
+           06D : 98B1;  --     OUT    PXL_D
+           06E : B8BE;  -- 	LOADI  190
+           06F : 98B0;  --     OUT    PXL_A
+           070 : 09FB;  --     LOAD   GREENCOLOR
+           071 : 98B1;  --     OUT    PXL_D
            072 : 2800;  -- 	JUMP   Start
-           073 : 9000;  -- 	IN	  Switches
-           074 : 489B;  -- 	AND	  Bit9
-           075 : 4000;  -- 	JZERO START
-           076 : 088D;  -- 	LOAD REDCOLOR
-           077 : 98B2;  -- 	OUT  PXL_ALL
-           078 : 2800;  -- 	JUMP   Start
-           079 : 9000;  -- 	IN	   Switches
-           07A : 489A;  -- 	AND	   BIT8
-           07B : 4000;  -- 	JZERO  START
-           07C : 088F;  -- 	LOAD   GREENCOLOR
-           07D : 98B2;  -- 	OUT    PXL_ALL
-           07E : 2800;  -- 	JUMP   Start
-           07F : 9000;  -- 	IN	   Switches
-           080 : 4899;  -- 	AND	   BIT7
-           081 : 4000;  -- 	JZERO  START
-           082 : 088E;  -- 	LOAD   BLUECOLOR
-           083 : 98B2;  -- 	OUT    PXL_ALL
-           084 : 2800;  -- 	JUMP   Start
-           085 : 108B;  -- 	STORE  DelayTime   ; Save the desired delay
-           086 : 9802;  -- 	OUT    Timer       ; Reset the timer
-           087 : 9002;  -- 	IN     Timer       ; Get the current timer value
-           088 : 208B;  -- 	SUB    DelayTime
-           089 : 3087;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
-           08A : 8800;  -- 	RETURN
-           08B : 0000;  -- DelayTime: DW 0
-           08C : 0014;  -- WAIT_FOR_RAINBOW: DW 20
-           08D : F800;  -- REDCOLOR:   DW &B1111100000000000
-           08E : 001F;  -- BLUECOLOR:  DW &B0000000000011111
-           08F : 07E0;  -- GREENCOLOR: DW &B0000011111100000
-           090 : FFFF;  -- WHITECOLOR: DW &B1111111111111111
-           091 : 0000;  -- BitReset:	DW &B0000000000000000
-           092 : 0001;  -- Bit0:	    DW &B0000000000000001
-           093 : 0002;  -- Bit1:	    DW &B0000000000000010
-           094 : 0004;  -- Bit2:	    DW &B0000000000000100
-           095 : 0008;  -- Bit3:	    DW &B0000000000001000
-           096 : 0010;  -- Bit4:	    DW &B0000000000010000
-           097 : 0020;  -- Bit5:	    DW &B0000000000100000
-           098 : 0040;  -- Bit6:	    DW &B0000000001000000
-           099 : 0080;  -- Bit7:	    DW &B0000000010000000
-           09A : 0100;  -- Bit8:	    DW &B0000000100000000
-           09B : 0200;  -- Bit9:	    DW &B0000001000000000
-           09C : 0000;  -- zero:       DW &B0000000000000000
+           073 : 9000;  -- 	IN 	   Switches 
+           074 : 49FF;  -- 	AND	   BIT1
+           075 : 4000;  -- 	JZERO  START 
+           076 : B801;  -- 	LOADI  1
+           077 : 98B0;  -- 	OUT    PXL_A
+           078 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           079 : B8FF;  -- 	LOADI  &B11111111
+           07A : 98B4;  -- 	OUT    PXL_24_RED
+           07B : B8FF;  -- 	LOADI  &B11111111
+           07C : 98B5;  -- 	OUT    PXL_24_GREEN
+           07D : B800;  -- 	LOADI  &B00000000
+           07E : 98B6;  -- 	OUT    PXL_24_BLUE
+           07F : B806;  -- 	LOADI  6
+           080 : 98B0;  -- 	OUT PXL_A
+           081 : 98B3;  -- 	OUT    PXL_24BITCOLOR
+           082 : B8FF;  -- 	LOADI  &B11111111
+           083 : 98B4;  -- 	OUT    PXL_24_RED
+           084 : B8FF;  -- 	LOADI  &B11111111
+           085 : 98B5;  -- 	OUT    PXL_24_GREEN
+           086 : B800;  -- 	LOADI  &B00000000
+           087 : 98B6;  -- 	OUT    PXL_24_BLUE
+           088 : 2800;  -- 	JUMP   Start
+           089 : 9000;  -- 	IN	   Switches
+           08A : 4A00;  -- 	AND	   BIT2
+           08B : 4000;  -- 	JZERO  START
+           08C : B800;  -- 	LOADI  0 
+           08D : 98B0;  -- 	OUT	   PXL_A
+           08E : 09FA;  -- 	LOAD   BLUECOLOR
+           08F : 98B1;  -- 	OUT    PXL_D
+           090 : B802;  -- 	LOADI  2
+           091 : 98B0;  -- 	OUT	   PXL_A
+           092 : 09FA;  -- 	LOAD   BLUECOLOR
+           093 : 98B1;  -- 	OUT    PXL_D
+           094 : B803;  -- 	LOADI  3
+           095 : 98B0;  -- 	OUT	   PXL_A
+           096 : 09FA;  -- 	LOAD   BLUECOLOR
+           097 : 98B1;  -- 	OUT    PXL_D
+           098 : B804;  -- 	LOADI  4 
+           099 : 98B0;  -- 	OUT	   PXL_A
+           09A : 09FA;  -- 	LOAD   BLUECOLOR
+           09B : 98B1;  -- 	OUT    PXL_D
+           09C : B806;  -- 	LOADI  6 
+           09D : 98B0;  -- 	OUT	   PXL_A
+           09E : 09FA;  -- 	LOAD   BLUECOLOR
+           09F : 98B1;  -- 	OUT    PXL_D
+           0A0 : B807;  -- 	LOADI  7
+           0A1 : 98B0;  -- 	OUT	   PXL_A
+           0A2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0A3 : 98B1;  -- 	OUT    PXL_D
+           0A4 : B808;  -- 	LOADI  8 
+           0A5 : 98B0;  -- 	OUT	   PXL_A
+           0A6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0A7 : 98B1;  -- 	OUT    PXL_D
+           0A8 : B80A;  -- 	LOADI  10 
+           0A9 : 98B0;  -- 	OUT	   PXL_A
+           0AA : 09FA;  -- 	LOAD   BLUECOLOR
+           0AB : 98B1;  -- 	OUT    PXL_D
+           0AC : B80B;  -- 	LOADI  11
+           0AD : 98B0;  -- 	OUT	   PXL_A
+           0AE : 09FA;  -- 	LOAD   BLUECOLOR
+           0AF : 98B1;  -- 	OUT    PXL_D
+           0B0 : B80C;  -- 	LOADI  12 
+           0B1 : 98B0;  -- 	OUT	   PXL_A
+           0B2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0B3 : 98B1;  -- 	OUT    PXL_D
+           0B4 : B815;  -- 	LOADI  21 
+           0B5 : 98B0;  -- 	OUT	   PXL_A
+           0B6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0B7 : 98B1;  -- 	OUT    PXL_D
+           0B8 : B816;  -- 	LOADI  22 
+           0B9 : 98B0;  -- 	OUT	   PXL_A
+           0BA : 09FA;  -- 	LOAD   BLUECOLOR
+           0BB : 98B1;  -- 	OUT    PXL_D
+           0BC : B817;  -- 	LOADI  23
+           0BD : 98B0;  -- 	OUT	   PXL_A
+           0BE : 09FA;  -- 	LOAD   BLUECOLOR
+           0BF : 98B1;  -- 	OUT    PXL_D
+           0C0 : B819;  -- 	LOADI  25
+           0C1 : 98B0;  -- 	OUT	   PXL_A
+           0C2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0C3 : 98B1;  -- 	OUT    PXL_D
+           0C4 : B81A;  -- 	LOADI  26 
+           0C5 : 98B0;  -- 	OUT	   PXL_A
+           0C6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0C7 : 98B1;  -- 	OUT    PXL_D
+           0C8 : B81B;  -- 	LOADI  27 
+           0C9 : 98B0;  -- 	OUT	   PXL_A
+           0CA : 09FA;  -- 	LOAD   BLUECOLOR
+           0CB : 98B1;  -- 	OUT    PXL_D
+           0CC : B81D;  -- 	LOADI  29
+           0CD : 98B0;  -- 	OUT	   PXL_A
+           0CE : 09FA;  -- 	LOAD   BLUECOLOR
+           0CF : 98B1;  -- 	OUT    PXL_D
+           0D0 : B81E;  -- 	LOADI  30 
+           0D1 : 98B0;  -- 	OUT	   PXL_A
+           0D2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0D3 : 98B1;  -- 	OUT    PXL_D
+           0D4 : B81F;  -- 	LOADI  31 
+           0D5 : 98B0;  -- 	OUT	   PXL_A
+           0D6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0D7 : 98B1;  -- 	OUT    PXL_D
+           0D8 : B820;  -- 	LOADI  32
+           0D9 : 98B0;  -- 	OUT	   PXL_A
+           0DA : 09FA;  -- 	LOAD   BLUECOLOR
+           0DB : 98B1;  -- 	OUT    PXL_D
+           0DC : B824;  -- 	LOADI  36
+           0DD : 98B0;  -- 	OUT	   PXL_A
+           0DE : 09FA;  -- 	LOAD   BLUECOLOR
+           0DF : 98B1;  -- 	OUT    PXL_D
+           0E0 : B828;  -- 	LOADI  40
+           0E1 : 98B0;  -- 	OUT	   PXL_A
+           0E2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0E3 : 98B1;  -- 	OUT    PXL_D
+           0E4 : B833;  -- 	LOADI  51 
+           0E5 : 98B0;  -- 	OUT	   PXL_A
+           0E6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0E7 : 98B1;  -- 	OUT    PXL_D
+           0E8 : B837;  -- 	LOADI  55
+           0E9 : 98B0;  -- 	OUT	   PXL_A
+           0EA : 09FA;  -- 	LOAD   BLUECOLOR
+           0EB : 98B1;  -- 	OUT    PXL_D
+           0EC : B839;  -- 	LOADI  57
+           0ED : 98B0;  -- 	OUT	   PXL_A
+           0EE : 09FA;  -- 	LOAD   BLUECOLOR
+           0EF : 98B1;  -- 	OUT    PXL_D
+           0F0 : B83E;  -- 	LOADI  62
+           0F1 : 98B0;  -- 	OUT	   PXL_A
+           0F2 : 09FA;  -- 	LOAD   BLUECOLOR
+           0F3 : 98B1;  -- 	OUT    PXL_D
+           0F4 : B83F;  -- 	LOADI  63
+           0F5 : 98B0;  -- 	OUT	   PXL_A
+           0F6 : 09FA;  -- 	LOAD   BLUECOLOR
+           0F7 : 98B1;  -- 	OUT    PXL_D
+           0F8 : B840;  -- 	LOADI  64
+           0F9 : 98B0;  -- 	OUT	   PXL_A
+           0FA : 09FA;  -- 	LOAD   BLUECOLOR
+           0FB : 98B1;  -- 	OUT    PXL_D
+           0FC : B842;  -- 	LOADI  66
+           0FD : 98B0;  -- 	OUT	   PXL_A
+           0FE : 09FA;  -- 	LOAD   BLUECOLOR
+           0FF : 98B1;  -- 	OUT    PXL_D
+           100 : B846;  -- 	LOADI  70
+           101 : 98B0;  -- 	OUT	   PXL_A
+           102 : 09FA;  -- 	LOAD   BLUECOLOR
+           103 : 98B1;  -- 	OUT    PXL_D
+           104 : B848;  -- 	LOADI  72
+           105 : 98B0;  -- 	OUT	   PXL_A
+           106 : 09FA;  -- 	LOAD   BLUECOLOR
+           107 : 98B1;  -- 	OUT    PXL_D
+           108 : B84C;  -- 	LOADI  76
+           109 : 98B0;  -- 	OUT	   PXL_A
+           10A : 09FA;  -- 	LOAD   BLUECOLOR
+           10B : 98B1;  -- 	OUT    PXL_D
+           10C : B857;  -- 	LOADI  87
+           10D : 98B0;  -- 	OUT	   PXL_A
+           10E : 09FA;  -- 	LOAD   BLUECOLOR
+           10F : 98B1;  -- 	OUT    PXL_D
+           110 : B85B;  -- 	LOADI  91
+           111 : 98B0;  -- 	OUT	   PXL_A
+           112 : 09FA;  -- 	LOAD   BLUECOLOR
+           113 : 98B1;  -- 	OUT    PXL_D
+           114 : B85F;  -- 	LOADI  95
+           115 : 98B0;  -- 	OUT	   PXL_A
+           116 : 09FA;  -- 	LOAD   BLUECOLOR
+           117 : 98B1;  -- 	OUT    PXL_D
+           118 : B860;  -- 	LOADI  96
+           119 : 98B0;  -- 	OUT	   PXL_A
+           11A : 09FA;  -- 	LOAD   BLUECOLOR
+           11B : 98B1;  -- 	OUT    PXL_D
+           11C : B861;  -- 	LOADI  97 
+           11D : 98B0;  -- 	OUT	   PXL_A
+           11E : 09FA;  -- 	LOAD   BLUECOLOR
+           11F : 98B1;  -- 	OUT    PXL_D
+           120 : B862;  -- 	LOADI  98
+           121 : 98B0;  -- 	OUT	   PXL_A
+           122 : 09FA;  -- 	LOAD   BLUECOLOR
+           123 : 98B1;  -- 	OUT    PXL_D
+           124 : B864;  -- 	LOADI  100 
+           125 : 98B0;  -- 	OUT	   PXL_A
+           126 : 09FA;  -- 	LOAD   BLUECOLOR
+           127 : 98B1;  -- 	OUT    PXL_D
+           128 : B868;  -- 	LOADI  104
+           129 : 98B0;  -- 	OUT	   PXL_A
+           12A : 09FA;  -- 	LOAD   BLUECOLOR
+           12B : 98B1;  -- 	OUT    PXL_D
+           12C : B869;  -- 	LOADI  105
+           12D : 98B0;  -- 	OUT	   PXL_A
+           12E : 09FA;  -- 	LOAD   BLUECOLOR
+           12F : 98B1;  -- 	OUT    PXL_D
+           130 : B86A;  -- 	LOADI  106
+           131 : 98B0;  -- 	OUT	   PXL_A
+           132 : 09FA;  -- 	LOAD   BLUECOLOR
+           133 : 98B1;  -- 	OUT    PXL_D
+           134 : B873;  -- 	LOADI  115
+           135 : 98B0;  -- 	OUT	   PXL_A
+           136 : 09FA;  -- 	LOAD   BLUECOLOR
+           137 : 98B1;  -- 	OUT    PXL_D
+           138 : B874;  -- 	LOADI  116
+           139 : 98B0;  -- 	OUT	   PXL_A
+           13A : 09FA;  -- 	LOAD   BLUECOLOR
+           13B : 98B1;  -- 	OUT    PXL_D
+           13C : B875;  -- 	LOADI  117
+           13D : 98B0;  -- 	OUT	   PXL_A
+           13E : 09FA;  -- 	LOAD   BLUECOLOR
+           13F : 98B1;  -- 	OUT    PXL_D
+           140 : B877;  -- 	LOADI  119
+           141 : 98B0;  -- 	OUT	   PXL_A
+           142 : 09FA;  -- 	LOAD   BLUECOLOR
+           143 : 98B1;  -- 	OUT    PXL_D
+           144 : B879;  -- 	LOADI  121
+           145 : 98B0;  -- 	OUT	   PXL_A
+           146 : 09FA;  -- 	LOAD   BLUECOLOR
+           147 : 98B1;  -- 	OUT    PXL_D
+           148 : B87B;  -- 	LOADI  123
+           149 : 98B0;  -- 	OUT	   PXL_A
+           14A : 09FA;  -- 	LOAD   BLUECOLOR
+           14B : 98B1;  -- 	OUT    PXL_D
+           14C : B87C;  -- 	LOADI  124
+           14D : 98B0;  -- 	OUT	   PXL_A
+           14E : 09FA;  -- 	LOAD   BLUECOLOR
+           14F : 98B1;  -- 	OUT    PXL_D
+           150 : B87D;  -- 	LOADI  125
+           151 : 98B0;  -- 	OUT	   PXL_A
+           152 : 09FA;  -- 	LOAD   BLUECOLOR
+           153 : 98B1;  -- 	OUT    PXL_D
+           154 : B87F;  -- 	LOADI  127
+           155 : 98B0;  -- 	OUT	   PXL_A
+           156 : 09FA;  -- 	LOAD   BLUECOLOR
+           157 : 98B1;  -- 	OUT    PXL_D
+           158 : B880;  -- 	LOADI  128
+           159 : 98B0;  -- 	OUT	   PXL_A
+           15A : 09FA;  -- 	LOAD   BLUECOLOR
+           15B : 98B1;  -- 	OUT    PXL_D
+           15C : B882;  -- 	LOADI  130
+           15D : 98B0;  -- 	OUT	   PXL_A
+           15E : 09FA;  -- 	LOAD   BLUECOLOR
+           15F : 98B1;  -- 	OUT    PXL_D
+           160 : B886;  -- 	LOADI  134
+           161 : 98B0;  -- 	OUT	   PXL_A
+           162 : 09FA;  -- 	LOAD   BLUECOLOR
+           163 : 98B1;  -- 	OUT    PXL_D
+           164 : B888;  -- 	LOADI  136
+           165 : 98B0;  -- 	OUT	   PXL_A
+           166 : 09FA;  -- 	LOAD   BLUECOLOR
+           167 : 98B1;  -- 	OUT    PXL_D
+           168 : B88A;  -- 	LOADI  138
+           169 : 98B0;  -- 	OUT	   PXL_A
+           16A : 09FA;  -- 	LOAD   BLUECOLOR
+           16B : 98B1;  -- 	OUT    PXL_D
+           16C : B897;  -- 	LOADI  151
+           16D : 98B0;  -- 	OUT	   PXL_A
+           16E : 09FA;  -- 	LOAD   BLUECOLOR
+           16F : 98B1;  -- 	OUT    PXL_D
+           170 : B89B;  -- 	LOADI  155
+           171 : 98B0;  -- 	OUT	   PXL_A
+           172 : 09FA;  -- 	LOAD   BLUECOLOR
+           173 : 98B1;  -- 	OUT    PXL_D
+           174 : B89F;  -- 	LOADI  159
+           175 : 98B0;  -- 	OUT	   PXL_A
+           176 : 09FA;  -- 	LOAD   BLUECOLOR
+           177 : 98B1;  -- 	OUT    PXL_D
+           178 : B8A0;  -- 	LOADI  160
+           179 : 98B0;  -- 	OUT	   PXL_A
+           17A : 09FA;  -- 	LOAD   BLUECOLOR
+           17B : 98B1;  -- 	OUT    PXL_D
+           17C : B8A1;  -- 	LOADI  161
+           17D : 98B0;  -- 	OUT	   PXL_A
+           17E : 09FA;  -- 	LOAD   BLUECOLOR
+           17F : 98B1;  -- 	OUT    PXL_D
+           180 : B8A2;  -- 	LOADI  162
+           181 : 98B0;  -- 	OUT	   PXL_A
+           182 : 09FA;  -- 	LOAD   BLUECOLOR
+           183 : 98B1;  -- 	OUT    PXL_D
+           184 : B8A4;  -- 	LOADI  164
+           185 : 98B0;  -- 	OUT	   PXL_A
+           186 : 09FA;  -- 	LOAD   BLUECOLOR
+           187 : 98B1;  -- 	OUT    PXL_D
+           188 : B8A5;  -- 	LOADI  165
+           189 : 98B0;  -- 	OUT	   PXL_A
+           18A : 09FA;  -- 	LOAD   BLUECOLOR
+           18B : 98B1;  -- 	OUT    PXL_D
+           18C : B8A6;  -- 	LOADI  166
+           18D : 98B0;  -- 	OUT	   PXL_A
+           18E : 09FA;  -- 	LOAD   BLUECOLOR
+           18F : 98B1;  -- 	OUT    PXL_D
+           190 : B8A8;  -- 	LOADI  168
+           191 : 98B0;  -- 	OUT	   PXL_A
+           192 : 09FA;  -- 	LOAD   BLUECOLOR
+           193 : 98B1;  -- 	OUT    PXL_D
+           194 : B8A9;  -- 	LOADI  169
+           195 : 98B0;  -- 	OUT	   PXL_A
+           196 : 09FA;  -- 	LOAD   BLUECOLOR
+           197 : 98B1;  -- 	OUT    PXL_D
+           198 : B8AA;  -- 	LOADI  170
+           199 : 98B0;  -- 	OUT	   PXL_A
+           19A : 09FA;  -- 	LOAD   BLUECOLOR
+           19B : 98B1;  -- 	OUT    PXL_D
+           19C : B8B3;  -- 	LOADI  179
+           19D : 98B0;  -- 	OUT	   PXL_A
+           19E : 09FA;  -- 	LOAD   BLUECOLOR
+           19F : 98B1;  -- 	OUT    PXL_D
+           1A0 : B8B4;  -- 	LOADI  180 
+           1A1 : 98B0;  -- 	OUT	   PXL_A
+           1A2 : 09FA;  -- 	LOAD   BLUECOLOR
+           1A3 : 98B1;  -- 	OUT    PXL_D
+           1A4 : B8B5;  -- 	LOADI  181
+           1A5 : 98B0;  -- 	OUT	   PXL_A
+           1A6 : 09FA;  -- 	LOAD   BLUECOLOR
+           1A7 : 98B1;  -- 	OUT    PXL_D
+           1A8 : B8B7;  -- 	LOADI  183
+           1A9 : 98B0;  -- 	OUT	   PXL_A
+           1AA : 09FA;  -- 	LOAD   BLUECOLOR
+           1AB : 98B1;  -- 	OUT    PXL_D
+           1AC : B8B8;  -- 	LOADI  184
+           1AD : 98B0;  -- 	OUT	   PXL_A
+           1AE : 09FA;  -- 	LOAD   BLUECOLOR
+           1AF : 98B1;  -- 	OUT    PXL_D
+           1B0 : B8B9;  -- 	LOADI  185
+           1B1 : 98B0;  -- 	OUT	   PXL_A
+           1B2 : 09FA;  -- 	LOAD   BLUECOLOR
+           1B3 : 98B1;  -- 	OUT    PXL_D
+           1B4 : B8BB;  -- 	LOADI  187
+           1B5 : 98B0;  -- 	OUT	   PXL_A
+           1B6 : 09FA;  -- 	LOAD   BLUECOLOR
+           1B7 : 98B1;  -- 	OUT    PXL_D
+           1B8 : B8BC;  -- 	LOADI  188
+           1B9 : 98B0;  -- 	OUT	   PXL_A
+           1BA : 09FA;  -- 	LOAD   BLUECOLOR
+           1BB : 98B1;  -- 	OUT    PXL_D
+           1BC : B8BD;  -- 	LOADI  189
+           1BD : 98B0;  -- 	OUT	   PXL_A
+           1BE : 09FA;  -- 	LOAD   BLUECOLOR
+           1BF : 98B1;  -- 	OUT    PXL_D
+           1C0 : B8BF;  -- 	LOADI  191
+           1C1 : 98B0;  -- 	OUT	   PXL_A
+           1C2 : 09FA;  -- 	LOAD   BLUECOLOR
+           1C3 : 98B1;  -- 	OUT    PXL_D
+           1C4 : 2800;  -- 	JUMP   START
+           1C5 : 9000;  -- 	IN	   Switches
+           1C6 : 4A02;  -- 	AND	   BIT4
+           1C7 : 4000;  -- 	JZERO  START
+           1C8 : B800;  -- 	LoadI  0
+           1C9 : 98B0;  -- 	OUT    PXL_A
+           1CA : 09FB;  -- 	LOAD   GREENCOLOR
+           1CB : 98B1;  -- 	OUT    PXL_D
+           1CC : 98B1;  -- 	OUT    PXL_D
+           1CD : 98B1;  -- 	OUT    PXL_D
+           1CE : 98B1;  -- 	OUT    PXL_D
+           1CF : 98B1;  -- 	OUT    PXL_D
+           1D0 : 2800;  -- 	JUMP   Start
+           1D1 : 9000;  -- 	IN	   Switches
+           1D2 : 4A03;  -- 	AND	   BIT5
+           1D3 : 4000;  -- 	JZERO  START
+           1D4 : B802;  -- 	LOADI 2
+           1D5 : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
+           1D6 : 2800;  -- 	JUMP   Start
+           1D7 : 9000;  -- 	IN	   Switches
+           1D8 : 4A04;  -- 	AND	   BIT6
+           1D9 : 4000;  -- 	JZERO  START
+           1DA : 09F9;  -- 	LOAD REDCOLOR
+           1DB : 98B1;  -- 	OUT PXL_D
+           1DC : B800;  -- 	LOADI 0
+           1DD : 98B7;  -- 	OUT PATTERN_NUMBER_EN 
+           1DE : 2800;  -- 	JUMP   Start
+           1DF : 9000;  -- 	IN	  Switches
+           1E0 : 4A07;  -- 	AND	  Bit9
+           1E1 : 4000;  -- 	JZERO START
+           1E2 : 09F9;  -- 	LOAD REDCOLOR
+           1E3 : 98B2;  -- 	OUT  PXL_ALL
+           1E4 : 2800;  -- 	JUMP   Start
+           1E5 : 9000;  -- 	IN	   Switches
+           1E6 : 4A06;  -- 	AND	   BIT8
+           1E7 : 4000;  -- 	JZERO  START
+           1E8 : 09FB;  -- 	LOAD   GREENCOLOR
+           1E9 : 98B2;  -- 	OUT    PXL_ALL
+           1EA : 2800;  -- 	JUMP   Start
+           1EB : 9000;  -- 	IN	   Switches
+           1EC : 4A05;  -- 	AND	   BIT7
+           1ED : 4000;  -- 	JZERO  START
+           1EE : 0A08;  -- 	LOAD   zero
+           1EF : 98B2;  -- 	OUT    PXL_ALL
+           1F0 : 2800;  -- 	JUMP   Start
+           1F1 : 11F7;  -- 	STORE  DelayTime   ; Save the desired delay
+           1F2 : 9802;  -- 	OUT    Timer       ; Reset the timer
+           1F3 : 9002;  -- 	IN     Timer       ; Get the current timer value
+           1F4 : 21F7;  -- 	SUB    DelayTime
+           1F5 : 31F3;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
+           1F6 : 8800;  -- 	RETURN
+           1F7 : 0000;  -- DelayTime: DW 0
+           1F8 : 0014;  -- WAIT_FOR_RAINBOW: DW 20
+           1F9 : F800;  -- REDCOLOR:   DW &B1111100000000000
+           1FA : 001F;  -- BLUECOLOR:  DW &B0000000000011111
+           1FB : 07E0;  -- GREENCOLOR: DW &B0000011111100000
+           1FC : FFFF;  -- WHITECOLOR: DW &B1111111111111111
+           1FD : 0000;  -- BitReset:	DW &B0000000000000000
+           1FE : 0001;  -- Bit0:	    DW &B0000000000000001
+           1FF : 0002;  -- Bit1:	    DW &B0000000000000010
+           200 : 0004;  -- Bit2:	    DW &B0000000000000100
+           201 : 0008;  -- Bit3:	    DW &B0000000000001000
+           202 : 0010;  -- Bit4:	    DW &B0000000000010000
+           203 : 0020;  -- Bit5:	    DW &B0000000000100000
+           204 : 0040;  -- Bit6:	    DW &B0000000001000000
+           205 : 0080;  -- Bit7:	    DW &B0000000010000000
+           206 : 0100;  -- Bit8:	    DW &B0000000100000000
+           207 : 0200;  -- Bit9:	    DW &B0000001000000000
+           208 : 0000;  -- zero:       DW &B0000000000000000
   END;
